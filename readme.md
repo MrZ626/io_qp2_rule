@@ -47,7 +47,7 @@
 
 同时在升级时会获得一个 `xp在5秒内不自然流失` 的效果（详见两节后的xp流失段落），防止升级后只剩一点点xp刚好自然流失导致立刻降级。
 
-同时每次升级时，上一行中的5秒会减少1秒，反复降级升级就不能一直吃这个buff，不过至少保留1秒。在升级后重新达到本级的升级所需xp的一半时重置回5秒。
+同时还有一个`升级疲劳`机制：每次升级时，上一行中的`5秒内不自然流失`会减少1秒（至少留1秒），反复降级升级时这个效果就会越来越弱。想恢复的话需要在一次升级后紧接着达到50%（经验条中间段的斜坡顶），效果重置回5秒。
 
 ### 跳级
 
@@ -385,14 +385,14 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关
         }
         this.S.stats.zenith.targetingfactor += 0.25;
         this.S.stats.zenith.targetinggrace -= 0.25;
-        this.S.lastatkti - e;
+        this.S.lastatktime = e;
     }
 
     const expertBonus = this.S.setoptions.zenith_expert ? 0.05 : 0.03;
     const messyBonus = this.S.setoptions.zenith_messy ? 0.25 : 0;
-    const messinessIncrea - 2.5 * (expertBonus + messyBonus);
-    this.S.setoptions.messiness_chan - messinessIncrease;
+    const messinessIncrease = 2.5 * (expertBonus + messyBonus);
+    this.S.setoptions.messiness_change = messinessIncrease;
     this.S.setoptions.messiness_inner = expertBonus + messyBonus;
     this.S.setoptions.garbagefavor = (this.S.setoptions.zenith_expert ? 0 : 33) - 3 * l - (this.S.setoptions.zenith_messy ? 25 : 0);
-    this.S.setoptions.garbagepha - this.S.setoptions.zenith_expert ? 66 - 6 * l : 165 - 15 * l;
+    this.S.setoptions.garbagephase = this.S.setoptions.zenith_expert ? 66 - 6 * l : 165 - 15 * l;
 ```
