@@ -477,6 +477,20 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关
 惩罚改为20行实心垃圾行（立刻死亡）  
 同时非spin消除全部强制视为single（消二接消四 计为两个single，死）
 
+## 塔罗牌简要总结
+
+| 正位Mod | 效果简述 | 对应逆位Mod | 效果简述，且包含正位效果 |
+| :---: | :---: | :---: | :---: |
+| 皇帝 Emperor | 减小容错+更难爬高 | 暴君 The Tyrant | 高度会下坠 |
+| 节制 Temperance | 无暂存 | 禁欲 Asceticism | 1next+非bag |
+| 命运之轮 Wheel of Fortune | 垃圾更乱 | 铅骰 Loaded Dice | 1s消行延迟 |
+| 塔 The Tower | 高重力 | 自由落体 Freefall | 20G |
+| 力量 Strength | 双倍垃圾行 | 顽抗 Last Stand | 三倍垃圾行 |
+| 恶魔 The Devil | 双洞垃圾行 | 天谴 Damnation | 废墟垃圾行 |
+| 隐士 The Hermit | 隐形带闪烁 | 放逐 The Exile | 不再闪烁 |
+| 魔法师 The Magician | AllSpin但惩罚重复 | 邪术师 The Warlock | 完全禁止犯错 |
+| 恋人 The Lovers | 双人 | N/A | N/A |
+
 ## 一些随手贴着不知道会不会有用的技术信息补充
 
 `受击权重`:targetingfactor
