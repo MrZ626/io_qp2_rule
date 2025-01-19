@@ -303,6 +303,8 @@ Mod的设定是塔罗牌，下文会在每个Mod的名称后写出
 
 重力显著增加
 
+十层的锁定延迟表： 30, 29, 28, 27, 26, 24, 22, 20, 18, 16
+
 ### 不稳定垃圾行 （力量 Strength）
 
 从场地底部升起的垃圾行数量翻倍（内部的机制其实是收到攻击数翻倍，且抵消倍率也翻倍）
@@ -422,7 +424,9 @@ Mod的设定是塔罗牌，下文会在每个Mod的名称后写出
 
 在原有的抵消与消行不增加推进器经验的基础上，
 
-新增下坠机制，高度会随时间下降（不降层，会被每层的地板拦住）：
+推进器不再随着时间增加高度，必须通过输出和击杀才能获得高度
+
+下坠：高度会随时间下降（不降层，会被每层的地板拦住）（看起来有加速度实际是匀速）：
 
 1. 0.5 m/s
 1. 0.6 m/s
@@ -445,11 +449,15 @@ Mod的设定是塔罗牌，下文会在每个Mod的名称后写出
 | 7分钟 | +25%受击 | 流言开始大肆传播… | WHISPERS OF DISCONTENT SPREAD… receive 25% more garbage |
 | 8分钟 | +3行实心垃圾 | 示威人群涌上街头… | PROTESTERS LINE THE STREETS… +3 PERMANENT LINES |
 | 9分钟 | +25%受击 | 昔日同盟背叛了你… | YOUR CLOSEST ALLIES DEFECT… receive 25% more garbage |
-| 10分钟 | +5行实心垃圾 | 猜疑侵蚀着你的理性… | PARANOIA CLOUDS YOUR JUDGEMENT… +5 PERMANENT LINES |
+| 10分钟 | +5行实心垃圾 | 偏执遮蔽了你的理性… | PARANOIA CLOUDS YOUR JUDGEMENT… +5 PERMANENT LINES |
 | 11分钟 | 垃圾行显著混乱 | 革命拉开了帷幕… | THE REVOLUTION HAS BEGUN… garbage received becomes much messier |
 | 12分钟 | +12行实心垃圾 | 时代的终结。 | THE END OF AN ERA. +12 PERMANENT LINES |
 
-另外击杀基础奖励从15m变为8m
+在每一层停留的时间超过60秒时，每秒永久增加0.5%受击倍率（累计生效200秒后相当于开了力量Mod并且没有双倍抵消）
+
+`受击缓冲`的容量不再是固定的3，而是随楼层变化，一层为1，每多一层少0.1
+
+击杀基础奖励从15m减少为8m
 
 ### 无暂存+ （禁欲 Asceticism）
 
@@ -473,6 +481,8 @@ Mod的设定是塔罗牌，下文会在每个Mod的名称后写出
 ### 高重力+ （自由落体 Freefall）
 
 从一开局起就20G
+
+十层的锁定延迟表： 24, 22, 20, 18, 16, 15, 14, 13, 12, 11
 
 ### 不稳定垃圾行+ （顽抗 Last Stand）
 
@@ -521,11 +531,13 @@ Mod的设定是塔罗牌，下文会在每个Mod的名称后写出
 
 ```js
     // 一些常数表
-    FloorDistance - [0, 50, 150, 300, 450, 650, 850, 1100, 1350, 1650, 1 / 0];
-    TargetingGrace - [0, 4.8, 3.9, 2.1, 1.4, 1.3, .9, .6, .4, .3, .2];
+    FloorDistance = [0, 50, 150, 300, 450, 650, 850, 1100, 1350, 1650, 1 / 0];
     GravityBumps = [0, .48, .3, .3, .3, .3, .3, .3, .3, .3, .3];
-    LockTimes = [0, 30, 29, 28, 27, 26, 24, 22, 20, 18, 16];
+    GravLockDelay = [0, 30, 29, 28, 27, 26, 24, 22, 20, 18, 16];
+    GravRevLockDelay = [0, 24, 22, 20, 18, 16, 15, 14, 13, 12, 11];
     SpeedrunReq = [7, 8, 8, 9, 9, 10, 0, 0, 0, 0, 0];
+    TargetingGraceRevEx = [0, 1, .9, .8, .7, .6, .5, .4, .3, .2, .1];
+    RevNoHoldHoleSideChangeChance = [.1, .1, .15, .2, .25, .3, .35, .4, .45, .5, .55];
     GetSpeedCap(e) {
         const t = this.FloorDistance.find((t => e < t)) - e;
         return Math.max(0, Math.min(1, t / 5 - .2))
