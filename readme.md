@@ -483,17 +483,17 @@ Mod的设定是塔罗牌，下文会在每个Mod的名称后写出
 
 ## 塔罗牌简要总结
 
-| 正位Mod | 效果简述 | 对应逆位Mod | 效果简述（包含正位效果） |
-| :---: | :---: | :---: | :---: |
-| 皇帝 Emperor | 减小容错+更难爬高 | 暴君 The Tyrant | 高度会下坠 |
-| 节制 Temperance | 无暂存 | 禁欲 Asceticism | 1next+非bag |
-| 命运之轮 Wheel of Fortune | 垃圾更乱 | 铅骰 Loaded Dice | 1s消行延迟 |
-| 塔 The Tower | 高重力 | 自由落体 Freefall | 20G |
-| 力量 Strength | 双倍垃圾行 | 顽抗 Last Stand | 三倍垃圾行 |
-| 恶魔 The Devil | 双洞垃圾行 | 天谴 Damnation | 废墟垃圾行 |
-| 隐士 The Hermit | 隐形带闪烁 | 放逐 The Exile | 不再闪烁 |
-| 魔法师 The Magician | AllSpin但惩罚重复 | 邪术师 The Warlock | 完全禁止犯错 |
-| 恋人 The Lovers | 双人 | N/A | N/A |
+| 正位 | 名称 | 效果简述 | 逆位 | 名称 | 效果简述（包含正位效果） |
+| ---: | :--- | :---: | ---: | :--- | :---: |
+| Emperor | 皇帝 | 减小容错+更难爬高 | The Tyrant | 暴君 | 极难爬高，会下坠 |
+| Temperance | 节制 | 无暂存 | Asceticism | 禁欲 | 1预览+随机+2宽垃圾 |
+| Wheel of Fortune | 命运之轮 | 垃圾更乱 | Loaded Dice | 铅骰 | 1s消行延迟+图案开局 |
+| The Tower | 塔 | 高重力 | Freefall | 自由落体 | 20G |
+| Strength | 力量 | 双倍垃圾+双倍抵消 | Last Stand | 顽抗 | 三倍垃圾+正常抵消+矮场地 |
+| The Devil | 恶魔 | 双洞垃圾 | Damnation | 天谴 | 废墟垃圾行+棋盘开局 |
+| The Hermit | 隐士 | 隐形+5秒闪烁 | The Exile | 放逐 | 不再闪烁+垃圾看不全 |
+| The Magician | 魔法师 | 不mini+惩罚重复 | The Warlock | 邪术师 | 即死惩罚+非旋都算消一 |
+| The Lovers | 恋人 | 双人 | | | |
 
 ## 一些随手贴着不知道会不会有用的技术信息补充
 
