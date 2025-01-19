@@ -541,6 +541,9 @@ Mod的设定是塔罗牌，下文会在每个Mod的名称后写出
 `受击缓冲`:targetinggrace
 
 ```js
+    // 楼层数变量floor从1开始，然后数组以0开始所以第一个元素可能要忽略掉
+    // 变量e是当前帧数，60帧=1秒
+
     // 一些常数表
     FloorDistance = [0, 50, 150, 300, 450, 650, 850, 1100, 1350, 1650, 1 / 0];
     GravityBumps = [0, .48, .3, .3, .3, .3, .3, .3, .3, .3, .3];
@@ -555,21 +558,49 @@ Mod的设定是塔罗牌，下文会在每个Mod的名称后写出
     }
 
     // 释放受击缓冲
-    const cooldownDuration = 60 * se.TargetingGrace[l];
+    const cooldownDuration = 60 * se.TargetingGrace[floor];
     if (this.S.stats.zenith.targetinggrace > 0 && e >= this.S.lastatktime + cooldownDuration) {
         if (this.S.stats.zenith.targetinggrace >= 3) {
-            this.S.setoptions.receivemultiplier += this.S.setoptions.zenith_volatile ? 0.5 : 0.25;
+            this.S.setoptions.receivemultiplier += mod_volatile ? 0.5 : 0.25;
         }
         this.S.stats.zenith.targetingfactor += 0.25;
         this.S.stats.zenith.targetinggrace -= 0.25;
         this.S.lastatktime = e;
     }
 
-    const expertBonus = this.S.setoptions.zenith_expert ? 0.05 : 0.03;
-    const messyBonus = this.S.setoptions.zenith_messy ? 0.25 : 0;
+    // 一些垃圾行相关参数计算 (“mod_”是简写，原代码中为“this.S.setoptions.zenith_”)
+    const expertBonus = mod_expert ? 0.05 : 0.03;
+    const messyBonus = 0;
+    if (mod_messy_rev) messyBonus = 1;
+    else if (mod_messy) messyBonus = .25;
+    if (mod_allspin_rev) messyBonus += .3;
     const messinessIncrease = 2.5 * (expertBonus + messyBonus);
     this.S.setoptions.messiness_change = messinessIncrease;
     this.S.setoptions.messiness_inner = expertBonus + messyBonus;
-    this.S.setoptions.garbagefavor = (this.S.setoptions.zenith_expert ? 0 : 33) - 3 * l - (this.S.setoptions.zenith_messy ? 25 : 0);
-    this.S.setoptions.garbagephase = this.S.setoptions.zenith_expert ? 66 - 6 * l : 165 - 15 * l;
+    this.S.setoptions.garbagefavor = mod_volatile ? 50 :
+        (mod_expert ? 0 : 33) - 3 * floor - (mod_messy ? 25 : 0);
+    this.S.setoptions.garbagephase =
+        mod_any_rev && !mod_expert_rev ? (
+            (mod_messy_rev || mod_volatile_rev || mod_doublehole_rev) ? 75 :
+            [75,75,75,75,75,75,75,60,45,30,15][floor]
+        ) :
+        (mod_expert ? 66 - 6 * floor : 165 - 15 * floor);
+
+    // 感觉没啥实际效果的临时降低混乱度机制（生成垃圾行时执行，不是永久修改）
+    if (mod_messy || gracestillmessy /*（专家+的第一个疲劳效果）*/) {
+        temp_messiness_change -= .0375 * t.stats.zenith.targetinggrace;
+        temp_messiness_inner -= .015 * t.stats.zenith.targetinggrace;
+        // 都不会降到0以下，为了方便阅读省去了=max(0,x)
+    }
+
+    // 不知道apm_cycle是什么
+    if (this.S.TEMP_zenith_apm_cycle) {
+        this.S.TEMP_zenith_apm_cycle += this.S.TEMP_zenith_apm / 3600 / 2.5 * (.75 + .5 * this.S.rngex.nextFloat())
+        if (this.S.TEMP_zenith_apm_cycle >= 1) {
+            this.S.TEMP_zenith_apm_cycle--;
+            const e = this.S.rngex.nextFloat() >= .5 ? 4 : 1;
+            this.self.atm.FightLines(e)
+        }
+    }
+
 ```
