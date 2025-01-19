@@ -420,11 +420,11 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关
 
 | 时间 | 负面效果 | 文本 | 原始文本 |
 | --- | --- | --- | --- |
-| 6分钟 | 垃圾行更混乱 | 力量开始流失… | YOUR POWER SLIPS… garbage received becomes messier |
-| 7分钟 | +25%受击 | 流言开始传播… | WHISPERS OF DISCONTENT SPREAD… receive 25% more garbage |
-| 8分钟 | +3行实心垃圾 | 反对者涌上街头… | PROTESTERS LINE THE STREETS… +3 PERMANENT LINES |
-| 9分钟 | +25%受击 | 昔日战友背叛了你… | YOUR CLOSEST ALLIES DEFECT… receive 25% more garbage |
-| 10分钟 | +5行实心垃圾 | 偏执蒙蔽了你的判断… | PARANOIA CLOUDS YOUR JUDGEMENT… +5 PERMANENT LINES |
+| 6分钟 | 垃圾行更混乱 | 你的权力开始流逝… | YOUR POWER SLIPS… garbage received becomes messier |
+| 7分钟 | +25%受击 | 流言开始大肆传播… | WHISPERS OF DISCONTENT SPREAD… receive 25% more garbage |
+| 8分钟 | +3行实心垃圾 | 示威人群涌上街头… | PROTESTERS LINE THE STREETS… +3 PERMANENT LINES |
+| 9分钟 | +25%受击 | 昔日同盟背叛了你… | YOUR CLOSEST ALLIES DEFECT… receive 25% more garbage |
+| 10分钟 | +5行实心垃圾 | 猜疑侵蚀着你的理性… | PARANOIA CLOUDS YOUR JUDGEMENT… +5 PERMANENT LINES |
 | 11分钟 | 垃圾行显著混乱 | 革命拉开了帷幕… | THE REVOLUTION HAS BEGUN… garbage received becomes much messier |
 | 12分钟 | +12行实心垃圾 | 时代的终结。 | THE END OF AN ERA. +12 PERMANENT LINES |
 
