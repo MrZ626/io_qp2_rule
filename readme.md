@@ -436,6 +436,9 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 专家+ （暴君 The Tyrant）
 
+> Fear, oppression, and limitless ambition.  
+> 恐惧、压迫和无限的野心。
+
 在原有的抵消与消行不增加推进器经验的基础上，
 
 推进器不再随着时间增加高度，必须通过输出和击杀才能获得高度
@@ -479,6 +482,9 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 无暂存+ （禁欲 Asceticism）
 
+> A detachment from even that which is moderate.  
+> 对哪怕是中庸之物的疏离。
+
 在原有的无暂存基础上，  
 1预览  
 没有影子  
@@ -486,6 +492,9 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 垃圾行变成2宽的样式，稍微好挖一点
 
 ### 混乱垃圾行+ （铅骰 Loaded Dice）
+
+> In a rigged game, your mind is the only fair advantage.  
+> 在被操纵的游戏中，你的头脑是唯一合理的优势。
 
 在原有的垃圾更混乱基础上，  
 消行延迟从0增加到1秒  
@@ -500,10 +509,16 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 高重力+ （自由落体 Freefall）
 
+> The ground you stood on never existed in the first place.  
+> 你所站立的地面从始至终都不存在。
+
 从一开局起就20G  
 十层的锁定延迟表： 24, 22, 20, 18, 16, 15, 14, 13, 12, 11
 
 ### 不稳定垃圾行+ （顽抗 Last Stand）
+
+> Strength isn't necessary for those with nothing to lose.  
+> 对那些一无所有的人而言，力量并非必需。
 
 三倍受击（没有三倍抵消）  
 14高场地  
@@ -511,11 +526,17 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 双洞垃圾行+ （天谴 Damnation）
 
+> No more second chances.  
+> 这是你最后的机会。
+
 初始场地变成12行棋盘垃圾行  
 垃圾行变成每行随机3~4个灰格的混沌垃圾行  
 不能抵消垃圾行（不过收到的也很少）
 
 ### 隐形+ （放逐 The Exile）
+
+> Never underestimate blind faith.  
+> 永远不要低估盲目的信仰。
 
 在原有的隐形基础上，  
 场地不再闪烁  
@@ -523,6 +544,9 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 开局会收系统3行全散垃圾
 
 ### All-Spin+ （邪术师 The Warlock）
+
+> Into realms beyond heaven and earth.  
+> 跨入超脱天地的境界。
 
 在原有的连续相同消除惩罚基础上，  
 惩罚改为20行实心垃圾行（立刻死亡）  
