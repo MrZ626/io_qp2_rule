@@ -286,9 +286,9 @@ TETR.IO中垃圾行的混乱度由两个数字决定：
 | --- | --- | --- | --- |
 | 8分钟  | +2行实心垃圾 | 疲劳开始侵蚀… | FATIGUE SETS IN… +2 PERMANENT LINES |
 | 9分钟  | +25%受击 | 你的身体变得虚弱… | YOUR BODY GROWS WEAK… receive 25% more garbage |
-| 10分钟 | +3行实心垃圾 | 所有感官混为一团… | ALL SENSES BLUR TOGETHER… +3 PERMANENT LINES |
+| 10分钟 | +3行实心垃圾(共5) | 所有感官混为一团… | ALL SENSES BLUR TOGETHER… +3 PERMANENT LINES |
 | 11分钟 | +25%受击 | 你的意识开始消逝… | YOUR CONSCIOUSNESS FADES… receive 25% more garbage |
-| 12分钟 | +5行实心垃圾 | 结束了。 | THIS IS THE END. +5 PERMANENT LINES |
+| 12分钟 | +5行实心垃圾(共10) | 结束了。 | THIS IS THE END. +5 PERMANENT LINES |
 
 > “专家+” Mod中疲劳效果有变，详见后文
 
@@ -432,6 +432,8 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 每个Mod都有对应的强化Mod（除了双人），需要带着对应的Mod累计爬3万米解锁（开了多个可以同时累计）
 
+> 如果你想尽快解锁所有强化Mod，
+
 所有的强化Mod都只能单独开启游玩，不能再叠加其他Mod
 
 ### 专家+ （暴君 The Tyrant）
@@ -470,9 +472,9 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 | 7分钟 | +25%受击 | 流言开始大肆传播… | WHISPERS OF DISCONTENT SPREAD… receive 25% more garbage |
 | 8分钟 | +3行实心垃圾 | 示威人群涌上街头… | PROTESTERS LINE THE STREETS… +3 PERMANENT LINES |
 | 9分钟 | +25%受击 | 昔日同盟背叛了你… | YOUR CLOSEST ALLIES DEFECT… receive 25% more garbage |
-| 10分钟 | +5行实心垃圾 | 偏执遮蔽了你的理性… | PARANOIA CLOUDS YOUR JUDGEMENT… +5 PERMANENT LINES |
+| 10分钟 | +5行实心垃圾(共8) | 偏执遮蔽了你的理性… | PARANOIA CLOUDS YOUR JUDGEMENT… +5 PERMANENT LINES |
 | 11分钟 | 垃圾行显著混乱 | 革命拉开了帷幕… | THE REVOLUTION HAS BEGUN… garbage received becomes much messier |
-| 12分钟 | +12行实心垃圾 | 时代的终结。 | THE END OF AN ERA. +12 PERMANENT LINES |
+| 12分钟 | +12行实心垃圾(共20) | 时代的终结。 | THE END OF AN ERA. +12 PERMANENT LINES |
 
 在每一层停留的时间超过60秒时，每秒永久增加0.5%受击倍率（例如累计生效200秒后收到攻击全都双倍）
 
@@ -488,8 +490,8 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 在原有的无暂存基础上，  
 1预览  
 没有影子  
-非7-Bag（似乎是纯随机）  
-垃圾行变成2宽的样式，稍微好挖一点
+纯随机序列（目测，应该是）  
+垃圾行都变成2宽的样式
 
 ### 混乱垃圾行+ （铅骰 Loaded Dice）
 
@@ -546,7 +548,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 ### All-Spin+ （邪术师 The Warlock）
 
 > Into realms beyond heaven and earth.  
-> 跨入超脱天地的境界。
+> 踏入超脱天地之境界。
 
 在原有的连续相同消除惩罚基础上，  
 惩罚改为20行实心垃圾行（立刻死亡）  
