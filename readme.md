@@ -607,7 +607,7 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
 
 ```js
     /*
-        代码来自2025.01.19的版本，估计是ts编译后的js所以有一定混淆，以下代码为修改过的伪代码，仅供思路参考
+        代码来自2025.01.19的版本，估计是ts编译后的js所以有一定混淆，以下代码为修改过的参考用代码
         删去了一些无关紧要（嗯嗯嗯 欸嘿）的内容，添加了各种注释
         “MOD_”是为了方便阅读的简写，在原代码为“this.S.setoptions.zenith_”，
         或者“"xxxxxx_reversed" === this.S.setoptions.zenith_mods[0]”
@@ -626,7 +626,6 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
         const t = this.FloorDistance.find((t => frame < t)) - frame;
         return Math.max(0, Math.min(1, t / 5 - .2))
     }
-
 
     // 主循环
     Loop() {
@@ -653,9 +652,8 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
                 this.S.zenith.last_rank_change_was_promote = false;
                 rank--;
             }
-        else if (this.S.zenith.climb_pts >= nextRankXP) {
-            // 升级
-            // 怎么感觉这里写错了…为啥扣完xp不加回去啊，所以导致了大surge导致跳级？
+        else if (this.S.zenith.climb_pts >= nextRankXP) 
+            // 清空xp升1级
             this.S.zenith.climb_pts -= nextRankXP; 
             this.S.zenith.last_rank_change_was_promote = true;
             this.S.zenith.rank_locked_until = frame + Math.max(60, 60 * (5 - this.S.zenith.promotion_fatigue));
@@ -667,7 +665,7 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
         if (this.S.zenith.last_rank_change_was_promote && this.S.zenith.climb_pts >= 2 * (rank - 1))
             this.S.zenith.promotion_fatigue = 0;
 
-        // 跳级就是这一行导致的
+        // 跳级！如果升级后还有大量剩余的话
         this.S.stats.zenith.rank = rank + this.S.zenith.climb_pts / (4 * rank);
 
         // 一些统计
@@ -679,17 +677,17 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
 
         if (MOD_expertRev) {
             // 【专家+】的下坠
-            this.S.stats.zenith.altitude = Math.max(me.FloorDistance[floor - 1], o - .05 * (floor ** 2 + floor + 10) / 60)
+            this.S.stats.zenith.altitude = Math.max(me.FloorDistance[floor - 1], o - .05 * (floor ** 2 + floor + 10) / 60);
         } else {
             // 推进器随时间爬升
-            this.S.stats.zenith.altitude += .25 * rank / 60 * me.GetSpeedCap(o)
+            this.S.stats.zenith.altitude += .25 * rank / 60 * me.GetSpeedCap(o);
         }
 
         // 平滑的高度变化
         if (this.S.zenith.bonusremaining > 0)
             if (this.S.zenith.bonusremaining <= .05) {
-                this.S.stats.zenith.altitude += this.S.zenith.bonusremaining
-                this.S.zenith.bonusremaining = 0
+                this.S.stats.zenith.altitude += this.S.zenith.bonusremaining;
+                this.S.zenith.bonusremaining = 0;
             }
             else {
                 const delta = Math.min(10, .1 * this.S.zenith.bonusremaining);
@@ -700,8 +698,8 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
         // 不让用“推进器随时间爬升”途径上楼
         this.S.setoptions.zenith_tutorial && this.S.stats.zenith.altitude >= 50 &&
         this.S.zenith.tutorial.stage > 0 && this.S.zenith.tutorial.stage < 5 && (
-            this.S.stats.zenith.altitude = Math.min(49.99, height0)
-            this.S.zenith.bonusremaining = 0
+            this.S.stats.zenith.altitude = Math.min(49.99, height0);
+            this.S.zenith.bonusremaining = 0;
         )
 
         // 【重力(+)】
@@ -711,46 +709,51 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
         this.S.stats.zenith.floor = floor
 
         // 【专家+】的超时惩罚
-        if (MOD_expertRev && frame - this.S.zenith.lastfloorchange > 3600 && (this.S.setoptions.receivemultiplier += .005 / 60), void 0 !== this.S.TEMP_zenith_apm_cycle) {
+        if (MOD_expertRev && frame - this.S.zenith.lastfloorchange > 3600)
+            this.S.setoptions.receivemultiplier += .005 / 60;
+
+        // 不知道啥玩意
+        if (this.S.TEMP_zenith_apm_cycle) {
             if (this.S.TEMP_zenith_apm_cycle += this.S.TEMP_zenith_apm / 3600 / 2.5 * (.75 + .5 * this.S.rngex.nextFloat()), this.S.TEMP_zenith_apm_cycle >= 1) {
                 this.S.TEMP_zenith_apm_cycle--;
-                this.self.atm.FightLines(this.S.rngex.nextFloat() >= .5 ? 4 : 1)
+                this.self.atm.FightLines(this.S.rngex.nextFloat() >= .5 ? 4 : 1);
             }
         }
 
         // 某些机制的即死，估计是给【全旋+】用的
-        if (this.self.atm.GetPendingGarbageCount() >= this.S.TEMP_zenith_instakill_at) this.self.gom.GameOver("garbagesmash")
+        if (this.self.atm.GetPendingGarbageCount() >= this.S.TEMP_zenith_instakill_at)
+            this.self.gom.GameOver("garbagesmash");
 
         // 受击权重在3/5/7分钟增加
-        if (frame===10800 || frame===18000 || frame===25200) this.S.stats.zenith.targetingfactor++;
+        if (frame===10800 || frame===18000 || frame===25200)
+            this.S.stats.zenith.targetingfactor++;
 
         // 释放受击保护
         let r = 60 * (MOD_expertRev ? TargetingGrace : TargetingGraceRevEx)[floor];
         if (this.S.stats.zenith.targetinggrace > 0 && frame >= this.S.lastatktime + r) {
-            this.S.stats.zenith.targetinggrace--
-            this.S.lastatktime = frame
+            this.S.stats.zenith.targetinggrace--;
+            this.S.lastatktime = frame;
         }
 
         // 刷新混乱度
         const messy = (MOD_expert ? .05 : .03) * floor;
-        if (MOD_messy) messy += .25
-        if (MOD_messyRev) messy += 1
-        if (MOD_allspinRev) messy += .3
-        this.S.setoptions.messiness_inner = messy
-        this.S.setoptions.messiness_change = 2.5 * messy
+        if (MOD_messy) messy += .25;
+        if (MOD_messyRev) messy += 1;
+        if (MOD_allspinRev) messy += .3;
+        this.S.setoptions.messiness_inner = messy;
+        this.S.setoptions.messiness_change = 2.5 * messy;
         if (this.S.zenith.maxmessy) {
-            this.S.setoptions.messiness_change = 1
-            this.S.setoptions.messiness_inner = 1
+            this.S.setoptions.messiness_change = 1;
+            this.S.setoptions.messiness_inner = 1;
         }
 
         // 垃圾行favor？？？暂时不知道具体怎么用的
-        this.S.setoptions.garbagefavor = MOD_volatileRev ? 50 : (MOD_expert ? 0 : 33) - 3 * floor - (MOD_messy ? 25 : 0)
+        this.S.setoptions.garbagefavor = MOD_volatileRev ? 50 : (MOD_expert ? 0 : 33) - 3 * floor - (MOD_messy ? 25 : 0);
 
         // 垃圾行等待时间
-        this.S.setoptions.garbagephase = MOD_expert ? 66 - 6 * floor : 165 - 15 * floor
-        if (MOD_anyRev && !MOD_expert) {
+        this.S.setoptions.garbagephase = MOD_expert ? 66 - 6 * floor : 165 - 15 * floor;
+        if (MOD_anyRev && !MOD_expert)
             this.S.setoptions.garbagephase = (MOD_messyRev || MOD_volatileRev || MOD_doubleholeRev) ? 75 : [75, 75, 75, 75, 75, 75, 75, 60, 45, 30, 15][floor];
-        }
 
         // 随着消除垃圾行逐渐关闭开局保护
         if (frame % 15 == 0 && (MOD_messyRev || MOD_doubleholeRev || MOD_allspinRev)) {
