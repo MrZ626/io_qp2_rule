@@ -35,14 +35,14 @@
 
 | 动作 | 效果 | 特殊 |
 | :--: | :--: | :--: |
-| 自然增加 | 每秒1m | 会`卡层`，距下一层6m~1m时逐渐变为0 |
-| 击杀 | 15m | 【专家+】时8m |
+| 自然增加 | 每秒`1m` | 会`卡层`，距下一层6m~1m时逐渐变为0 |
+| 击杀 | `15m` | 【专家+】时`8m` |
 | 发送 | `行数`m 和 `行数+0.05`xp | |
-| 抵消 | `行数/2+0.05`xp | 【专家(+)】或【双倍+】时仅 0.05xp |
-| 消行 | `min(行数,2)+0.05`xp | 【专家(+)】时仅 0.05xp |
-| `卡层`时消行 | 3m | 实际判定是距下一层2m内时 |
+| 抵消 | `行数/2+0.05`xp | 【专家(+)】或【双倍+】时仅 `0.05xp` |
+| 消行 | `min(行数,2)+0.05`xp | 【专家(+)】时***不触发*** |
+| `卡层`时触发前三条 | 3m | 此项不受`rank`影响，实际判定是距下一层2m内时 |
 
-> 注意所有的高度增加都受 `rank` 影响，具体来说是倍率为`rank/4`，例如开局时`rank`为1，倍率为×0.25，每4秒增加1m
+> 上述高度增加除了卡层的+3m外都受 `rank` 影响，具体来说是倍率为`rank/4`，例如开局时`rank`为1，倍率为×0.25，每4秒增加1m
 
 获得高度时，新增的高度会先存入一个临时变量，每帧释放10%，最大10m
 
@@ -772,30 +772,30 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
     AwardKill() { // 击杀
         this.GiveBonus(.25 * Math.floor(this.S.stats.zenith.rank) * (MOD_expertRev ? 8 : 15))
     }
-    AwardLines(e, t = true, n = true) { // 消行
-        // 消行加经验（受mod等影响）
-        let s = .25 * Math.floor(this.S.stats.zenith.rank) * e * (t ? 1 : 0);
+    AwardLines(amount, giveHeight = true, giveXP = true) { // 非专家消行(false,true) / 抵消(false,true) / 攻击(true,true)
+        // 加高度（受mod等影响，见推进器章节表格）
+        let dh = .25 * Math.floor(this.S.stats.zenith.rank) * amount * (giveHeight ? 1 : 0);
 
-        // 距离下一层2m内时+3m
-        const i = me.FloorDistance.find((e => this.S.stats.zenith.altitude < e)) - this.S.stats.zenith.altitude - s - this.S.zenith.bonusremaining;
-        if (i >= 0 && i <= 2) s += 3;
+        // 卡层时+3m
+        const heightToNextFloor = me.FloorDistance.find((e => this.S.stats.zenith.altitude < e)) - this.S.stats.zenith.altitude - dh - this.S.zenith.bonusremaining;
+        if (heightToNextFloor >= 0 && heightToNextFloor <= 2) dh += 3;
 
-        this.GiveBonus(s);
+        this.GiveBonus(dh);
 
         // 消行获取经验
-        this.GiveClimbPts((e + .05) * (n ? 1 : 0));
+        this.GiveClimbPts((amount + .05) * (giveXP ? 1 : 0));
     }
-    AwardHasBeenAttacked(e) { // 被攻击
-        const t = Math.min(18 - this.S.stats.zenith.targetinggrace, e);
-        if (t > 0) this.S.stats.zenith.targetinggrace += t;
+    AwardHasBeenAttacked(amount) { // 被攻击
+        const spaceRemain = Math.min(18 - this.S.stats.zenith.targetinggrace, amount);
+        if (spaceRemain > 0) this.S.stats.zenith.targetinggrace += spaceRemain;
     }
-    GiveBonus(e) { // 获取高度（各种途径）
+    GiveBonus(amount) { // 获取高度（各种途径）
         if (this.S.setoptions.zenith_tutorial && this.S.zenith.tutorial.stage > 0 && this.S.zenith.tutorial.stage < 5)
-            e *= me.GetSpeedCap(this.S.stats.zenith.altitude);
-        this.S.zenith.bonusremaining += e;
+            amount *= me.GetSpeedCap(this.S.stats.zenith.altitude);
+        this.S.zenith.bonusremaining += amount;
         if (this._bonusExpires < this.self.esm.frame) this._bonusCount = 0;
-        this._bonusCount += e;
+        this._bonusCount += amount;
         this._bonusExpires = this.self.esm.frame + 60;
-        this.S.zenith.bonusfromally += e;
+        this.S.zenith.bonusfromally += amount;
     }
 ```
