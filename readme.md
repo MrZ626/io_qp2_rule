@@ -416,11 +416,12 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 之后会出现的效果说明：
 
-1. `开局保护`：仅会在开局有垃圾行的Mod中出现，的清理掉场地内最后5行垃圾行时，每一行会让`受击权重`增加0.5，总共2.5（具有此条目的Mod估计是会改低这个初始值，然后通过这种方式逐渐恢复正常）
+1. `垃圾行保护`（仅在【全旋+】【双洞+】【混乱+】中出现）：  
+场地内的最后5行垃圾每一行会让`受击权重`减少0.5，总共2.5（初始3，所以开局很少被打）
 
 ### 专家+ （暴君 The Tyrant）
 
-> Fear, oppression, and limitless ambition.
+> Fear, oppression, and limitless ambition.  
 > 恐惧、压迫和无限的野心。
 
 在原有的种种限制上，
@@ -466,7 +467,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 无暂存+ （禁欲 Asceticism）
 
-> A detachment from even that which is moderate.
+> A detachment from even that which is moderate.  
 > 对哪怕是中庸之物的疏离。
 
 在原有的无暂存基础上，
@@ -478,7 +479,7 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
 
 ### 混乱+ （铅骰 Loaded Dice）
 
-> In a rigged game, your mind is the only fair advantage.
+> In a rigged game, your mind is the only fair advantage.  
 > 在被操纵的游戏中，你的头脑是唯一合理的优势。
 
 `垃圾混乱度`增加
@@ -491,11 +492,11 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
     .XXX..XXX.
     ..........
     摞三层，互相和墙都不接触，最后就像骰子的六点/麻将的六筒一样
-有`开局保护`
+有`垃圾行保护`
 
 ### 重力+ （自由落体 Freefall）
 
-> The ground you stood on never existed in the first place.
+> The ground you stood on never existed in the first place.  
 > 你所站立的地面从始至终都不存在。
 
 从一开局起就20G
@@ -503,7 +504,7 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
 
 ### 双倍+ （顽抗 Last Stand）
 
-> Strength isn't necessary for those with nothing to lose.
+> Strength isn't necessary for those with nothing to lose.  
 > 对那些一无所有的人而言，力量并非必需。
 
 受击倍率变为3倍（注意：抵消倍率不变）
@@ -513,17 +514,17 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
 
 ### 双洞+ （天谴 Damnation）
 
-> No more second chances.
+> No more second chances.  
 > 这是你最后的机会。
 
 初始场地变成12行棋盘垃圾行
 垃圾行变成每行随机3~4个灰格的混沌垃圾行
 不能抵消垃圾行（不过收到的也很少）
-有`开局保护`
+有`垃圾行保护`
 
 ### 隐形+ （放逐 The Exile）
 
-> Never underestimate blind faith.
+> Never underestimate blind faith.  
 > 永远不要低估盲目的信仰。
 
 在原有的隐形基础上，
@@ -533,7 +534,7 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
 
 ### 全旋+ （邪术师 The Warlock）
 
-> Into realms beyond heaven and earth.
+> Into realms beyond heaven and earth.  
 > 踏入超脱天地之境界。
 
 在原有的连续相同消除惩罚基础上，
@@ -541,7 +542,7 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
 同时非Spin消除全部强制视为Single（消二接消四 计为两个Single，死）
 开局会收系统10行垃圾
 `垃圾混乱度`增加
-有`开局保护`
+有`垃圾行保护`
 
 ## 塔罗牌简要总结
 
@@ -627,7 +628,7 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
                 this.S.zenith.last_rank_change_was_promote = false;
                 rank--;
             }
-        else if (this.S.zenith.climb_pts >= nextRankXP) 
+        else if (this.S.zenith.climb_pts >= nextRankXP) {
             // 清空xp升1级
             this.S.zenith.climb_pts -= nextRankXP; 
             this.S.zenith.last_rank_change_was_promote = true;
@@ -671,17 +672,16 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
             }
 
         // 不让用“推进器随时间爬升”途径上楼
-        this.S.setoptions.zenith_tutorial && this.S.stats.zenith.altitude >= 50 &&
-        this.S.zenith.tutorial.stage > 0 && this.S.zenith.tutorial.stage < 5 && (
+        if (this.S.setoptions.zenith_tutorial && this.S.stats.zenith.altitude >= 50 && this.S.zenith.tutorial.stage > 0 && this.S.zenith.tutorial.stage < 5) {
             this.S.stats.zenith.altitude = Math.min(49.99, height0);
             this.S.zenith.bonusremaining = 0;
-        )
+        }
 
         // 【重力(+)】
         floor !== this.S.stats.zenith.floor && (
             MOD_gravity ? (this.S.g += me.GravityBumps[floor], this.S.setoptions.locktime = me.GLockDelay[floor]) : MOD_gravityRev && (this.S.g = 20, this.S.setoptions.locktime = me.GRLockDelay[floor]), this.S.zenith.lastfloorchange = frame, 1 === floor ? this.S.glock = 240 : this.S.stats.zenith.splits[floor - 2] = Math.round(this.self.lm.GetGameTime())
         )
-        this.S.stats.zenith.floor = floor
+        this.S.stats.zenith.floor = floor;
 
         // 【专家+】的超时惩罚
         if (MOD_expertRev && frame - this.S.zenith.lastfloorchange > 3600)
@@ -730,7 +730,7 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
         if (MOD_anyRev && !MOD_expert)
             this.S.setoptions.garbagephase = (MOD_messyRev || MOD_volatileRev || MOD_doubleholeRev) ? 75 : [75, 75, 75, 75, 75, 75, 75, 60, 45, 30, 15][floor];
 
-        // 随着消除垃圾行逐渐关闭开局保护
+        // 随着消除垃圾行逐渐关闭垃圾行保护
         if (frame % 15 == 0 && (MOD_messyRev || MOD_doubleholeRev || MOD_allspinRev)) {
             const line = this.self.bm.CountGarbageLinesNoPerma();
             if (line !== this.S.zenith.garbagerowcount) {
