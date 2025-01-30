@@ -237,7 +237,7 @@ TETR.IO中垃圾行的混乱度由两个数字决定：
 
 ## 垃圾幸运度
 
-决定了垃圾行洞位置的选取倾向。该值可正可负：正数越大，洞的位置就会选得越好挖，负得越多，洞就会选得越难挖（具体怎么选的见附录代码，我也没完全看懂）
+决定了垃圾行洞位置的选取倾向。该值可正可负：正数越大，洞的位置就会选得越好挖，负得越多，洞就会选得越难挖（具体算法见技术信息补充章节的代码注释）
 
 该值为0时（TL等模式的通常情况），垃圾行洞的位置均等随机选取。如果开启了`垃圾行不连续`（messiness_nosame，如自定义房间设置），则会避开上一次选取的列
 
@@ -245,6 +245,9 @@ TETR.IO中垃圾行的混乱度由两个数字决定：
 开启【专家(+)】时，该值-33，也就是开局时均等随机  
 开启【混乱(+)】时，该值-25  
 开启【双倍+】时，该值全程锁定为50
+
+> 最难的是【专家】【混乱】十层后的 -55  
+> 最容易是【双倍+】的 50
 
 ## 垃圾行等待时间
 
@@ -762,7 +765,7 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
     }
 
     // 一些方法
-    function a() { // 计算垃圾行洞位置相关，主要是处理垃圾幸运度 （使用copilot整理过代码，不保证完全正确）
+    function getHolePosition() { // 计算垃圾行洞位置相关，主要是处理垃圾幸运度 （使用copilot整理过代码，不保证完全正确）
         let pos = 0;
 
         if (MOD_volatileRev) t.zenith.garbageahead.shift();
@@ -772,6 +775,7 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
                 const scores = [];
 
                 // 如果最高的一行有洞并且包含了灰色格子（垃圾行），记录左数第一个洞的位置为holePosAtTopLine
+                // 感觉不太对……？是我理解错了还是真就代码写错了，我猜设计预期是找到最浅垃圾行的洞位置？
                 let garbageHolePosAtTop = -1;
                 for (let y = field.height - 1; y >= 0; y--) {
                     let holePos = -1;
@@ -790,28 +794,28 @@ Spin全都计为Mini（基础攻击为`消行数-1`）
                     }
                 }
 
-                // 对于每一列，记录此列的一个分数为，如果包含了空格 `距离顶部距离 + 5*距垃圾顶洞水平距离 + 0.1内的随机数`，否则为 `0.1内的随机数`
+                // 对于每一列，先找到该列最低的空格，记录此列的“易挖度”为`空格的y到场地顶的垂直距离 + 5*空格的x到垃圾顶洞的水平距离 + 0.1内的随机数`，找不到空格的话就不管前两项
                 e: for (let x = 0; x < field.width; x++) {
                     for (let y = 0; y < field.height; y++) {
                         if (null !== t.board[y][x]) {
-                            const distToTop = field.height - y,
-                                r = garbageHolePosAtTop === -1 ? 0 : Math.abs(x - garbageHolePosAtTop);
-                            scores.push([x, distToTop + 5 * r + .1 * t.rngex.nextFloat()]);
+                            const r = garbageHolePosAtTop === -1 ? 0 : Math.abs(x - garbageHolePosAtTop);
+                            scores.push([x, (field.height - y) + 5 * r + .1 * t.rngex.nextFloat()]);
                             continue e;
                         }
                     }
                     scores.push([x, .1 * t.rngex.nextFloat()]);
                 }
 
-                // 按照每列分数从大到小排序
+                // 按照每列的易挖度从大到小排序（具体分值之后没再用到，不用管了）
                 scores.sort((e, t) => t[1] - e[1]);
 
-                // 根据幸运度决定权重分布并计算每列的权重分
-                // 每一列的权重线性递减（低于0的视为0），这条直线通过点（5.5列，10分），随着favor增大会顺时针旋转。（取0时斜率为0，虽然此情况无意义）
-                // https://www.desmos.com/3d/wvraccfdfh X轴为列，Z轴为权重，Y轴是favor，用左侧滑块调整
+                // 在上一步中已经把十个列按照易挖度排了序，接下来根据幸运度计算每列的权重，也就是决定要倾向于挑选易挖度高还是低的列
+                // favor为0时每一列的权重都是10，也就是等概率，图像画出来是一条直线（虽然0的时候其实会跳过这些步骤，不用这么麻烦），正数的时候就会把这条直线绕中点(4.5，10)顺时针旋转，也就是增加前五项好挖的列的权重，减少后五项不好挖的列的权重（负权重计为0）
+                // 你可以在这个Desmos页面里观察一下图像：https://www.desmos.com/calculator/yfzabziltb
+                // X轴为列编号（左侧好挖，右侧难挖），Y轴为权重，用左侧滑块调整favor的值
                 let scoreSum = 0;
                 for (let i = 0; i < scores.length; i++) {
-                    // 化简后式子相当于 `score=10+ favor*(1 - i/4.5)`
+                    // 化简后式子相当于 `score=10 + favor * (1 - i / 4.5)`，负数0
                     let score = Math.max(0, 10 + t.setoptions.garbagefavor + i * ((20 - 2 * (10 + t.setoptions.garbagefavor)) / 9));
                     if (t.setoptions.messiness_nosame && t.lastcolumn === scores[i][0]) score = 0;
                     if (MOD_volatileRev && (scores[i][0] < 2 || scores[i][0] >= e.bm.ColumnWidth() - 2)) score = 0;
