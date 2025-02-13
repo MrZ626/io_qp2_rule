@@ -580,15 +580,28 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 ### 双人+ （流血之心 Bleeding Hearts）
 
 > Even as we bleed, we keep holding on...  
-> 即使我们间伤痕累累，也依然紧紧相拥…
+> 即便已伤痕累累，我们仍紧紧相拥…
 
 特殊mod，2025年情人节活动限定mod，而且无需解锁
 
-- 打出攻击时会在队友场地立刻打入垃圾行（数量似乎是攻击-1），如果队友死了就会打给自己
-- 高度只有两个人都活着的时候才能增加
-- 有奇奇怪怪的疲劳机制和剧情向事件，例如
-    - 一分钟时“两人关系变得不好”，垃圾轻微变乱
-    - 击杀/复活队友时触发小情侣吵架/和好，垃圾行变乱/变整齐
+- 打出攻击时会在队友场地立刻打入垃圾行（数量为攻击/2，取整方式不明），如果队友死了就会打给自己
+- 有人死了的时候高度会被暂时锁定，直到复活
+- 特殊的疲劳流程（见附表）
+
+| 时间 | 负面效果 | 文本 | 原始文本 |
+| --- | --- | --- | --- |
+| 1分钟 | 垃圾混乱度+ | 两人关系变得停滞… | THE RELATIONSHIP STAGNATES… garbage becomes a bit messier |
+| 1分半 | 垃圾混乱度++ | 不安的情感逐渐增加… | INSECURITIES GROW STRONGER… garbage becomes messier |
+| 2分钟 | 垃圾混乱度+++ | {队友}感觉被抛弃了… | {PARTNER} FEELS NEGLECTED… garbage becomes much messier |
+| 2分半 | 垃圾混乱度- | {自己}成功道歉了…？ | {SELF} SUCCESSFULLY APOLOGIZES…? garbage becomes a bit cleaner |
+| 3分钟 | 垃圾混乱度--- | 事情恢复到了原本的样子… | THINGS ARE BACK TO HOW THEY SHOULD BE…! garbage becomes much cleaner |
+| 3分半 | 垃圾混乱度++ | 言语的重量不言而喻… | THE WEIGHT OF WORDS UNSPOKEN… garbage becomes messier |
+| 4分钟 | 垃圾混乱度+++ | “你就不能好好听我说吗？” | "WHY CAN'T YOU JUST LISTEN TO ME?" garbage becomes much messier |
+| 4分半 | 复活难度增加 | “这都是你的错”… | "THIS IS ALL YOUR FAULT" revive difficulty increased |
+| 5分钟 | 垃圾混乱度-- | {队友}道了同样的歉… | {PARTNER} MAKES THE SAME PROMISE AGAIN… garbage becomes cleaner |
+| 5分半 | +4行实心垃圾 | “这次不一样了。”… | "THIS TIME WILL BE DIFFERENT." +4 PERMANENT GAARBAGE |
+| 6分钟 | 垃圾混乱度+++ | 有些习惯不能被打破… | SOME HABITS CAN'T BE BROKEN… garbage becomes much messier |
+| 6分半 | 垃圾混乱度++ | 所有的信任都消逝了… | ALL TRUST HAS WITHERED AWAY… garbage becomes messier |
 
 ## 塔罗牌简要总结
 
