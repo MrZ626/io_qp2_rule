@@ -621,7 +621,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 |  2:00 | `垃圾混乱度`=30% | {队友}感到被忽视… | {PARTNER} FEELS NEGLECTED…  garbage becomes much messier |
 |  2:30 | `垃圾混乱度`=20% | {自己}的道歉被接受了…？ | {SELF} SUCCESSFULLY APOLOGIZES…?  garbage becomes a bit cleaner |
 |  3:00 | `垃圾混乱度`=0% | 一切回归正轨…！ | THINGS ARE BACK TO HOW THEY SHOULD BE…!  garbage becomes much cleaner |
-|  3:30 | `垃圾混乱度`=10% | 话到了嘴边但无法说出… | THE WEIGHT OF WORDS UNSPOKEN…  garbage becomes messier |
+|  3:30 | `垃圾混乱度`=10% | 未说出口的话是如此沉重… | THE WEIGHT OF WORDS UNSPOKEN…  garbage becomes messier |
 |  4:00 | `垃圾混乱度`=25% | “你就不能好好听我说吗？” | "WHY CAN'T YOU JUST LISTEN TO ME?"  garbage becomes much messier |
 |  4:30 | 复活难度+3级 | “这都是你的错。” | "THIS IS ALL YOUR FAULT."  revive difficulty increased |
 |  5:00 | `垃圾混乱度`=10% | {队友}道了同样的歉… | {PARTNER} MAKES THE SAME PROMISE AGAIN…  garbage becomes cleaner |
