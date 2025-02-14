@@ -616,24 +616,24 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 |  时间  | 效果 | 文本 | 原始文本 |
 | ----- | --- | --- | --- |
-|  1:00 | `垃圾混乱度`=5% | 两人关系变得停滞… | THE RELATIONSHIP STAGNATES…  garbage becomes a bit messier |
-|  1:30 | `垃圾混乱度`=15% | 不安的情感逐渐增加… | INSECURITIES GROW STRONGER…  garbage becomes messier |
-|  2:00 | `垃圾混乱度`=30% | {队友}感觉被抛弃了… | {PARTNER} FEELS NEGLECTED…  garbage becomes much messier |
-|  2:30 | `垃圾混乱度`=20% | {自己}成功道歉了…？ | {SELF} SUCCESSFULLY APOLOGIZES…?  garbage becomes a bit cleaner |
-|  3:00 | `垃圾混乱度`=0% | 事情恢复到了原本的样子… | THINGS ARE BACK TO HOW THEY SHOULD BE…!  garbage becomes much cleaner |
+|  1:00 | `垃圾混乱度`=5% | 两人的关系陷入了停滞… | THE RELATIONSHIP STAGNATES…  garbage becomes a bit messier |
+|  1:30 | `垃圾混乱度`=15% | 不安感愈发强烈… | INSECURITIES GROW STRONGER…  garbage becomes messier |
+|  2:00 | `垃圾混乱度`=30% | {队友}感到被忽视… | {PARTNER} FEELS NEGLECTED…  garbage becomes much messier |
+|  2:30 | `垃圾混乱度`=20% | {自己}的道歉被接受了…？ | {SELF} SUCCESSFULLY APOLOGIZES…?  garbage becomes a bit cleaner |
+|  3:00 | `垃圾混乱度`=0% | 一切回归正轨…！ | THINGS ARE BACK TO HOW THEY SHOULD BE…!  garbage becomes much cleaner |
 |  3:30 | `垃圾混乱度`=10% | 话到了嘴边但无法说出… | THE WEIGHT OF WORDS UNSPOKEN…  garbage becomes messier |
 |  4:00 | `垃圾混乱度`=25% | “你就不能好好听我说吗？” | "WHY CAN'T YOU JUST LISTEN TO ME?"  garbage becomes much messier |
-|  4:30 | 复活难度+3级 | “这都是你的错”… | "THIS IS ALL YOUR FAULT".  revive difficulty increased |
+|  4:30 | 复活难度+3级 | “这都是你的错。” | "THIS IS ALL YOUR FAULT."  revive difficulty increased |
 |  5:00 | `垃圾混乱度`=10% | {队友}道了同样的歉… | {PARTNER} MAKES THE SAME PROMISE AGAIN…  garbage becomes cleaner |
-|  5:30 | +4行实心垃圾 | “这次不一样了。”… | "THIS TIME WILL BE DIFFERENT."  +4 PERMANENT GARBAGE |
-|  6:00 | `垃圾混乱度`=30% | 有些习惯不能被打破… | SOME HABITS CAN'T BE BROKEN…  garbage becomes much messier |
-|  6:30 | `垃圾混乱度`=40% | 所有的信任都消逝了… | ALL TRUST HAS WITHERED AWAY…  garbage becomes messier |
+|  5:30 | +4行实心垃圾 | “这次不一样了。” | "THIS TIME WILL BE DIFFERENT."  +4 PERMANENT GARBAGE |
+|  6:00 | `垃圾混乱度`=30% | 有些习惯是无法改变的… | SOME HABITS CAN'T BE BROKEN…  garbage becomes much messier |
+|  6:30 | `垃圾混乱度`=40% | 所有的信任都消逝无踪… | ALL TRUST HAS WITHERED AWAY…  garbage becomes messier |
 |  7:00 | `垃圾混乱度`=50% | {自己}发出了最后通牒… | {SELF} SETS AN ULTIMATUM…  garbage becomes messier |
-|  7:30 | `垃圾混乱度`=60% | {队友}怀疑之前的精力是否都白费了… | {PARTNER} CONTEMPLATES THEIR WASTED EFFORT…  garbage becomes messier |
-|  8:00 | +25%受击倍率 | 最后一次惨痛的争吵… | ONE LAST PAINFUL ARGUMENT…  receive 25% more garbage |
+|  7:30 | `垃圾混乱度`=60% | {队友}思索着ta白费的努力。… | {PARTNER} CONTEMPLATES THEIR WASTED EFFORT…  garbage becomes messier |
+|  8:00 | +25%受击倍率 | 最后一次痛苦的争吵… | ONE LAST PAINFUL ARGUMENT…  receive 25% more garbage |
 | `8:30`| “禁用复活” | 永别了。 | GOODBYE.  you can no longer revive |
-| `9:30`| `垃圾混乱度`=20% | “我好想你” | "I MISS YOU"  garbage becomes much cleaner |
-| 10:00 | `垃圾混乱度`=10% | 如果我…？ | WHAT IF…?  garbage becomes a bit cleaner |
+| `9:30`| `垃圾混乱度`=20% | “想念你” | "I MISS YOU"  garbage becomes much cleaner |
+| 10:00 | `垃圾混乱度`=10% | 如果…？ | WHAT IF…?  garbage becomes a bit cleaner |
 | 10:30 | +12行实心垃圾(共16) | … | …  +12 PERMANENT LINES |
 
 > 该玩法中`垃圾混乱度`只根据疲劳流程和时间决定，原有的机制全都不管了  
