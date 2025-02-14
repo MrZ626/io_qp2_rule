@@ -437,6 +437,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 | A | lines              | 40  | 消40行 | Clear 40 Lines | 1 | |
 | A | combospin          | 4   | 一轮连击中4次旋消 | Clear 4 Spins\nin one Combo | 3 | |
 | A | tspindtcolumn      | 1   | T旋消二/三，但中心在最两旁的列 | Clear a T-Spin Double/Triple\ncentered in column 1 or 10 | 3 | |
+| X | ospinconsecutive   | 2   | 2连O旋消二 | Clear two O-Spin Mini\nDoubles consecutively | 3 | |
 
 其中F\~A级的任务分别对应1\~6的难度分，复活时任务的总复活难度分=`层数+已复活次数`（尽量平分为三个整数），具体表如下：
 
@@ -630,12 +631,13 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 |  7:00 | `垃圾混乱度`=50% | {自己}发出了最后通牒… | {SELF} SETS AN ULTIMATUM…  garbage becomes messier |
 |  7:30 | `垃圾混乱度`=60% | {队友}怀疑之前的精力是否都白费了… | {PARTNER} CONTEMPLATES THEIR WASTED EFFORT…  garbage becomes messier |
 |  8:00 | +25%受击倍率 | 最后一次惨痛的争吵… | ONE LAST PAINFUL ARGUMENT…  receive 25% more garbage |
-| `8:30`| 禁用复活 | 永别了。 | GOODBYE.  you can no longer revive |
+| `8:30`| “禁用复活” | 永别了。 | GOODBYE.  you can no longer revive |
 | `9:30`| `垃圾混乱度`=20% | “我好想你” | "I MISS YOU"  garbage becomes much cleaner |
 | 10:00 | `垃圾混乱度`=10% | 如果我…？ | WHAT IF…?  garbage becomes a bit cleaner |
 | 10:30 | +12行实心垃圾(共16) | … | …  +12 PERMANENT LINES |
 
-> 注：所有混乱度降低的事件触发时还都顺带手动触发了一次更换垃圾行位置
+> 所有混乱度降低的事件触发时还都顺带手动触发了一次更换垃圾行位置  
+> 获得“禁用复活”buff后，任务会固定变成那个X级任务
 
 ## 塔罗牌简要总结
 
