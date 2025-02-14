@@ -354,9 +354,9 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 - 对于每个人自己来说，大多数对外的数值都会被砍半，例如发送攻击和累计经验等
 - 两个人都死了后游戏结束，但一个人死后另一个人可以做任务复活队友
 
-任务分为ABCDEF六个等级，具体如下表：
+会出现的任务如下表：
 
-| 难度等级 | 内部id | 数值 | 内容 | 外显文本 | 标签类型（？） | 有特定Mod时不出现 |
+| 难度标记 | 内部id | 目标数值 | 内容 | 外显文本 | 标签类型（？） | 有特定Mod时不出现 |
 | - | - | - | - | - | - | - |
 | F | combo              | 3   | 3连击（四连消） | Perform a 3-Combo | 2 | |
 | F | double             | 2   | 2 x 消二 | Clear 2 Doubles | 2 | |
@@ -380,7 +380,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 | E | pieces             | 20  | 放20块 | Place 20 pieces | 2 | |
 | E | attack             | 6   | 送出6行攻击 | Send 6 Attack | 1 | |
 | E | placeoconsecutive  | 2   | 连放两块O | Place 2 O-Pieces\nin a row | 3 | |
-| E | norotateclockwise  | 12  | 不用非逆时针转 连放12块 | Place 12 pieces while only\nrotating counterclockwise | 4 | |
+| E | norotateclockwise  | 12  | 只用逆时针转 连放12块（用其他旋转时重来） | Place 12 pieces while only\nrotating counterclockwise | 4 | |
 | E | singlenocombo      | 6   | 不连击 6 x 消一 | Clear 6 Singles without\nstarting a combo | 3 | |
 | D | double             | 4   | 4 x 消二 | Clear 4 Doubles | 2 | |
 | D | spam               | 3   | 不转不移 连放3块 | Place 3 pieces in a row\nwithout moving or rotating | 4 | |
@@ -408,13 +408,13 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 | C | odoubleconsecutive | 2   | 2连O块消二 | Clear 2 Doubles consecutively\nusing two O-Pieces | 4 | |
 | C | tspinminiclear     | 4   | 4 x T旋mini消 | Clear 4 T-Spin Minis | 2 | |
 | C | attack             | 14  | 送出14行攻击 | Send 14 Attack | 1 | |
-| C | doublespiece       | 3   | 3 x 消二 只用一种块（其他块消二重来） | Clear 3 Doubles\nwith the same type of piece | 4 | |
+| C | doublespiece       | 3   | 3 x 消二 只用一种块（其他块消二时重来） | Clear 3 Doubles\nwith the same type of piece | 4 | |
 | C | ljgarbage          | 1   | L/J旋挖垃圾行 | Clear Garbage\nusing a L/J-Spin | 3 | |
 | C | szgarbage          | 1   | S/Z旋挖垃圾行 | Clear Garbage\nusing a S/Z-Spin | 3 | |
 | C | columnopiece       | 3   | 在第一列放三个O块 | Place 3 O-Pieces\nin column 1 | 3 | |
-| C | spinclear          | 2   | 一轮连击中2次旋消 | Clear 2 Spins\nin one combo | 3 | |
+| C | spinclear          | 2   | 一轮连击包含2次旋消 | Clear 2 Spins\nin one combo | 3 | |
 | C | iclearspam         | 1   | 不动I块消一 | Clear a Single with an I-Piece\nwithout moving or rotating | 4 | |
-| C | holddas            | 6   | 保持充着DAS 连放6块 | Place 6 Pieces\nwithout releasing DAS | 3 | |
+| C | holddas            | 6   | 保持充着DAS 连放6块（任一移动键状态变化时重置） | Place 6 Pieces\nwithout releasing DAS | 3 | |
 | B | oclear             | 6   | 消6行 用O块 | Clear 6 Lines\nusing O-Pieces | 3 | |
 | B | spinbuckets        | 3   | 三个不同块旋消 | Clear Spin-Clears\nwith 3 different pieces | 3 | |
 | B | quad               | 4   | 4 x 消四 | Clear 4 Quads | 1 | |
@@ -435,11 +435,11 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 | A | ljspinconsecutive  | 2   | 2连L/J旋消二 | Clear two L/J-Spin\nDoubles consecutively | 3 | |
 | A | colorclear         | 1   | 色彩消除 | Perform a Color Clear | 2 | |
 | A | lines              | 40  | 消40行 | Clear 40 Lines | 1 | |
-| A | combospin          | 4   | 一轮连击中4次旋消 | Clear 4 Spins\nin one Combo | 3 | |
+| A | combospin          | 4   | 一轮连击包含4次旋消 | Clear 4 Spins\nin one Combo | 3 | |
 | A | tspindtcolumn      | 1   | T旋消二/三，但旋转中心在边列 | Clear a T-Spin Double/Triple\ncentered in column 1 or 10 | 3 | |
 | X(特殊) | ospinconsecutive | 2 | 2连O旋消二 | Clear two O-Spin Mini\nDoubles consecutively | 3 | |
 
-需要复活时计算复活难度分=`层数+已复活次数`，然后从下表选取任务方案，然后从上表里随机选取任务并打乱顺序：
+需要复活时计算复活难度分=`层数+已复活次数`，然后根据分数从下表选取任务方案，最后从上表里随机选取任务并打乱顺序：
 
 1. F
 1. F F
