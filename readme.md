@@ -287,11 +287,11 @@ TETR.IO中垃圾行的混乱度由两个数字决定：
 
 | 时间 | 负面效果 | 文本 | 原始文本 |
 | --- | --- | --- | --- |
-| 8分钟  | +2行实心垃圾 | 疲劳开始侵蚀… | FATIGUE SETS IN… +2 PERMANENT LINES |
-| 9分钟  | +25%受击 | 你的身体变得虚弱… | YOUR BODY GROWS WEAK… receive 25% more garbage |
-| 10分钟 | +3行实心垃圾(共5) | 所有感官混为一团… | ALL SENSES BLUR TOGETHER… +3 PERMANENT LINES |
-| 11分钟 | +25%受击 | 你的意识开始消逝… | YOUR CONSCIOUSNESS FADES… receive 25% more garbage |
-| 12分钟 | +5行实心垃圾(共10) | 结束了。 | THIS IS THE END. +5 PERMANENT LINES |
+|  8:00 | +2行实心垃圾 | 疲劳开始侵蚀… | FATIGUE SETS IN… +2 PERMANENT LINES |
+|  9:00 | +25%受击倍率 | 你的身体变得虚弱… | YOUR BODY GROWS WEAK… receive 25% more garbage |
+| 10:00 | +3行实心垃圾(共5) | 所有感官混为一团… | ALL SENSES BLUR TOGETHER… +3 PERMANENT LINES |
+| 11:00 | +25%受击倍率 | 你的意识开始消逝… | YOUR CONSCIOUSNESS FADES… receive 25% more garbage |
+| 12:00 | +5行实心垃圾(共10) | 结束了。 | THIS IS THE END. +5 PERMANENT LINES |
 
 > 【专家+】时疲劳效果不同，详见后文
 
@@ -507,13 +507,13 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 | 时间 | 负面效果 | 文本 | 原始文本 |
 | --- | --- | --- | --- |
-| 6分钟 | 垃圾行更混乱(禁用`受击保护`效果) | 你的权力开始流逝… | YOUR POWER SLIPS… garbage received becomes messier |
-| 7分钟 | +25%受击 | 流言开始大肆传播… | WHISPERS OF DISCONTENT SPREAD… receive 25% more garbage |
-| 8分钟 | +3行实心垃圾 | 示威人群涌上街头… | PROTESTERS LINE THE STREETS… +3 PERMANENT LINES |
-| 9分钟 | +25%受击 | 昔日同盟背叛了你… | YOUR CLOSEST ALLIES DEFECT… receive 25% more garbage |
-| 10分钟 | +5行实心垃圾(共8) | 偏执遮蔽了你的理性… | PARANOIA CLOUDS YOUR JUDGEMENT… +5 PERMANENT LINES |
-| 11分钟 | 垃圾行彻底混乱(获得`全散`效果) | 革命拉开了帷幕… | THE REVOLUTION HAS BEGUN… garbage received becomes much messier |
-| 12分钟 | +12行实心垃圾(共20) | 时代的终结。 | THE END OF AN ERA. +12 PERMANENT LINES |
+|  6:00 | 垃圾行更混乱(禁用`受击保护`效果) | 你的权力开始流逝… | YOUR POWER SLIPS… garbage received becomes messier |
+|  7:00 | +25%受击倍率 | 流言开始大肆传播… | WHISPERS OF DISCONTENT SPREAD… receive 25% more garbage |
+|  8:00 | +3行实心垃圾 | 示威人群涌上街头… | PROTESTERS LINE THE STREETS… +3 PERMANENT LINES |
+|  9:00 | +25%受击倍率 | 昔日同盟背叛了你… | YOUR CLOSEST ALLIES DEFECT… receive 25% more garbage |
+| 10:00 | +5行实心垃圾(共8) | 偏执遮蔽了你的理性… | PARANOIA CLOUDS YOUR JUDGEMENT… +5 PERMANENT LINES |
+| 11:00 | 垃圾行彻底混乱(获得`全散`效果) | 革命拉开了帷幕… | THE REVOLUTION HAS BEGUN… garbage received becomes much messier |
+| 12:00 | +12行实心垃圾(共20) | 时代的终结。 | THE END OF AN ERA. +12 PERMANENT LINES |
 
 ### 无暂存+ （禁欲 Asceticism）
 
@@ -606,26 +606,36 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 > Even as we bleed, we keep holding on...  
 > 即便已伤痕累累，我们仍紧紧相拥…
 
-特殊mod，2025年情人节活动限定mod，而且无需解锁
+特殊mod，2025年情人节活动限定，而且无需解锁
 
 - 打出攻击时会在队友场地立刻打入垃圾行（数量为攻击/2，取整方式不明），如果队友死了就会打给自己
 - 有人死了的时候高度会被暂时锁定，直到复活
 - 特殊的疲劳流程（见附表）
+- 锁定最大等级为4（通常无限制）
 
-| 时间 | 负面效果 | 文本 | 原始文本 |
-| --- | --- | --- | --- |
-| 1分钟 | 垃圾混乱度+ | 两人关系变得停滞… | THE RELATIONSHIP STAGNATES… garbage becomes a bit messier |
-| 1分半 | 垃圾混乱度++ | 不安的情感逐渐增加… | INSECURITIES GROW STRONGER… garbage becomes messier |
-| 2分钟 | 垃圾混乱度+++ | {队友}感觉被抛弃了… | {PARTNER} FEELS NEGLECTED… garbage becomes much messier |
-| 2分半 | 垃圾混乱度- | {自己}成功道歉了…？ | {SELF} SUCCESSFULLY APOLOGIZES…? garbage becomes a bit cleaner |
-| 3分钟 | 垃圾混乱度--- | 事情恢复到了原本的样子… | THINGS ARE BACK TO HOW THEY SHOULD BE…! garbage becomes much cleaner |
-| 3分半 | 垃圾混乱度++ | 言语的重量不言而喻… | THE WEIGHT OF WORDS UNSPOKEN… garbage becomes messier |
-| 4分钟 | 垃圾混乱度+++ | “你就不能好好听我说吗？” | "WHY CAN'T YOU JUST LISTEN TO ME?" garbage becomes much messier |
-| 4分半 | 复活难度增加 | “这都是你的错”… | "THIS IS ALL YOUR FAULT" revive difficulty increased |
-| 5分钟 | 垃圾混乱度-- | {队友}道了同样的歉… | {PARTNER} MAKES THE SAME PROMISE AGAIN… garbage becomes cleaner |
-| 5分半 | +4行实心垃圾 | “这次不一样了。”… | "THIS TIME WILL BE DIFFERENT." +4 PERMANENT GAARBAGE |
-| 6分钟 | 垃圾混乱度+++ | 有些习惯不能被打破… | SOME HABITS CAN'T BE BROKEN… garbage becomes much messier |
-| 6分半 | 垃圾混乱度++ | 所有的信任都消逝了… | ALL TRUST HAS WITHERED AWAY… garbage becomes messier |
+|  时间  | 效果 | 文本 | 原始文本 |
+| ----- | --- | --- | --- |
+|  1:00 | `垃圾混乱度`=5% | 两人关系变得停滞… | THE RELATIONSHIP STAGNATES…  garbage becomes a bit messier |
+|  1:30 | `垃圾混乱度`=15% | 不安的情感逐渐增加… | INSECURITIES GROW STRONGER…  garbage becomes messier |
+|  2:00 | `垃圾混乱度`=30% | {队友}感觉被抛弃了… | {PARTNER} FEELS NEGLECTED…  garbage becomes much messier |
+|  2:30 | `垃圾混乱度`=20% | {自己}成功道歉了…？ | {SELF} SUCCESSFULLY APOLOGIZES…?  garbage becomes a bit cleaner |
+|  3:00 | `垃圾混乱度`=0% | 事情恢复到了原本的样子… | THINGS ARE BACK TO HOW THEY SHOULD BE…!  garbage becomes much cleaner |
+|  3:30 | `垃圾混乱度`=10% | 话到了嘴边但无法说出… | THE WEIGHT OF WORDS UNSPOKEN…  garbage becomes messier |
+|  4:00 | `垃圾混乱度`=25% | “你就不能好好听我说吗？” | "WHY CAN'T YOU JUST LISTEN TO ME?"  garbage becomes much messier |
+|  4:30 | 复活难度+3级 | “这都是你的错”… | "THIS IS ALL YOUR FAULT".  revive difficulty increased |
+|  5:00 | `垃圾混乱度`=10% | {队友}道了同样的歉… | {PARTNER} MAKES THE SAME PROMISE AGAIN…  garbage becomes cleaner |
+|  5:30 | +4行实心垃圾 | “这次不一样了。”… | "THIS TIME WILL BE DIFFERENT."  +4 PERMANENT GARBAGE |
+|  6:00 | `垃圾混乱度`=30% | 有些习惯不能被打破… | SOME HABITS CAN'T BE BROKEN…  garbage becomes much messier |
+|  6:30 | `垃圾混乱度`=40% | 所有的信任都消逝了… | ALL TRUST HAS WITHERED AWAY…  garbage becomes messier |
+|  7:00 | `垃圾混乱度`=50% | {自己}发出了最后通牒… | {SELF} SETS AN ULTIMATUM…  garbage becomes messier |
+|  7:30 | `垃圾混乱度`=60% | {队友}怀疑之前的精力是否都白费了… | {PARTNER} CONTEMPLATES THEIR WASTED EFFORT…  garbage becomes messier |
+|  8:00 | +25%受击倍率 | 最后一次惨痛的争吵… | ONE LAST PAINFUL ARGUMENT…  receive 25% more garbage |
+| `8:30`| 禁用复活 | 永别了。 | GOODBYE.  you can no longer revive |
+| `9:30`| `垃圾混乱度`=20% | “我好想你” | "I MISS YOU"  garbage becomes much cleaner |
+| 10:00 | `垃圾混乱度`=10% | 如果我…？ | WHAT IF…?  garbage becomes a bit cleaner |
+| 10:30 | +12行实心垃圾(共16) | … | …  +12 PERMANENT LINES |
+
+> 注：所有混乱度降低的事件触发时还都顺带手动触发了一次更换垃圾行位置
 
 ## 塔罗牌简要总结
 
