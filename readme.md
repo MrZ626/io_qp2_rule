@@ -473,7 +473,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 之后会出现的效果说明：
 
-1. `垃圾行保护`（仅在【全旋+】【双洞+】【混乱+】中出现）：  
+1. `垃圾行保护`（仅在部分Mod中使用）：  
 场地内的每一行`非永久垃圾行`（包含可消除的***灰色***格子的行）会使`受击权重`减少0.5，至多减2.5（由于初始权重为3，所以这几个模式开局很少被打），每0.25秒刷新一次
 
 ### 专家+ （暴君 The Tyrant）
@@ -828,7 +828,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
         if (MOD_anyRev && !MOD_expert)
             this.S.setoptions.garbagephase = (MOD_messyRev || MOD_volatileRev || MOD_doubleholeRev) ? 75 : [75, 75, 75, 75, 75, 75, 75, 60, 45, 30, 15][floor];
 
-        // 随着消除垃圾行逐渐关闭垃圾行保护
+        // 垃圾行保护，根据垃圾行数量开关改变受击权重
         if (frame % 15 == 0 && (MOD_messyRev || MOD_doubleholeRev || MOD_allspinRev)) {
             const line = this.self.bm.CountGarbageLinesNoPerma();
             if (line !== this.S.zenith.garbagerowcount) {
