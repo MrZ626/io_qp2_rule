@@ -408,7 +408,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 | C | odoubleconsecutive | 2   | 2连O块消二 | Clear 2 Doubles consecutively\nusing two O-Pieces | 4 | |
 | C | tspinminiclear     | 4   | 4 x T旋mini消 | Clear 4 T-Spin Minis | 2 | |
 | C | attack             | 14  | 送出14行攻击 | Send 14 Attack | 1 | |
-| C | doublespiece       | 3   | 3 x 消二 但需要连着用同一块（？） | Clear 3 Doubles\nwith the same type of piece | 4 | |
+| C | doublespiece       | 3   | 3 x 消二 只用一种块（其他块消二重来） | Clear 3 Doubles\nwith the same type of piece | 4 | |
 | C | ljgarbage          | 1   | L/J旋挖垃圾行 | Clear Garbage\nusing a L/J-Spin | 3 | |
 | C | szgarbage          | 1   | S/Z旋挖垃圾行 | Clear Garbage\nusing a S/Z-Spin | 3 | |
 | C | columnopiece       | 3   | 在第一列放三个O块 | Place 3 O-Pieces\nin column 1 | 3 | |
@@ -436,10 +436,10 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 | A | colorclear         | 1   | 色彩消除 | Perform a Color Clear | 2 | |
 | A | lines              | 40  | 消40行 | Clear 40 Lines | 1 | |
 | A | combospin          | 4   | 一轮连击中4次旋消 | Clear 4 Spins\nin one Combo | 3 | |
-| A | tspindtcolumn      | 1   | T旋消二/三，但中心在最两旁的列 | Clear a T-Spin Double/Triple\ncentered in column 1 or 10 | 3 | |
-| X | ospinconsecutive   | 2   | 2连O旋消二 | Clear two O-Spin Mini\nDoubles consecutively | 3 | |
+| A | tspindtcolumn      | 1   | T旋消二/三，但旋转中心在边列 | Clear a T-Spin Double/Triple\ncentered in column 1 or 10 | 3 | |
+| X(特殊) | ospinconsecutive | 2 | 2连O旋消二 | Clear two O-Spin Mini\nDoubles consecutively | 3 | |
 
-其中F\~A级的任务分别对应1\~6的难度分，复活时任务的总复活难度分=`层数+已复活次数`（尽量平分为三个整数），具体表如下：
+需要复活时计算复活难度分=`层数+已复活次数`，然后从下表选取任务方案，然后从上表里随机选取任务并打乱顺序：
 
 1. F
 1. F F
@@ -456,8 +456,8 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 1. C C B
 1. C B B
 1. B B B
-1. B B A
-1. B A A (上限)
+1. B B (代码里确实是这么写的，少一个A，估计是不小心弄错了之后会修)
+1. A B A (上限，并且此时固定顺序ABA不打乱)
 
 ## Mod+
 
@@ -637,8 +637,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 | 10:30 | +12行实心垃圾(共16) | … | …  +12 PERMANENT LINES |
 
 > 该玩法中`垃圾混乱度`只根据疲劳流程和时间决定，原有的机制全都不管了  
-> 另外所有混乱度降低的时刻也都手动触发了一次更换垃圾行位置  
-> 获得“禁用复活”buff后，任务会固定变成那个X级任务
+> 获得“禁用复活”buff后，复活任务组将固定变成那一条做不了的X级任务
 
 ## 塔罗牌简要总结
 
