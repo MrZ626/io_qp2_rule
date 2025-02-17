@@ -710,7 +710,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 | The Devil | 恶魔 | 双洞垃圾 | Damnation | 天谴 | 废墟垃圾行+棋盘开局 |
 | The Hermit | 隐士 | 隐形+5秒闪烁 | The Exile | 放逐 | 不再闪烁+垃圾看不全 |
 | The Magician | 魔法师 | 不mini+惩罚重复 | The Warlock | 邪术师 | 即死惩罚+非旋算消一+散垃圾开局 |
-| The Lovers | 恋人 | 双人 | | | |
+| The Lovers | 恋人 | 双人 | Bleeding Hearts | 流血之心 | Backfire但优先给队友 |
 
 ## 一些备注
 
