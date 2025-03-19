@@ -616,7 +616,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 重力+ （自由落体 Freefall）
 
-> The ground you stood on never existed in the first place.  
+> In retrospec, the ground you stood on never existed in the first place.  
 > 你所站立的地面从始至终都不存在。
 
 - 从一开局起就20G（十层的锁定延迟：24，22，20，18，16，15，14，13，12，11）
