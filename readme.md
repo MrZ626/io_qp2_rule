@@ -616,7 +616,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 重力+ （自由落体 Freefall）
 
-> In retrospec, the ground you stood on never existed in the first place.  
+> The ground you stood on never existed in the first place.  
 > 你所站立的地面从始至终都不存在。
 
 - 从一开局起就20G（十层的锁定延迟：24，22，20，18，16，15，14，13，12，11）
@@ -633,12 +633,12 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 双洞+ （天谴 Damnation）
 
-> No more second chances.  
-> 这是你最后的机会。
+> Neither the freedom of life or peace of death.
+> 生无自由，死无宁静。
 
 - 初始场地变成12行棋盘垃圾行
 - 垃圾行变成每行随机3~4个灰格的混沌垃圾行
-- 不能抵消垃圾行，不过受击倍率变为0.5
+- 无法攻击（包括抵消）。需要满足条件：消除垃圾行时，或者消除垃圾行后的下一次消除
 - 启用`垃圾行保护`
 
 ### 隐形+ （放逐 The Exile）
@@ -655,8 +655,9 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 > Into realms beyond heaven and earth.  
 > 踏入超脱天地之境界。
 
-- 连续相同消除会受到惩罚，且惩罚改为20行实心垃圾行（立刻死亡）
-- 同时非Spin消除全部强制视为Single（消二接消四 计为两个Single，死）
+- 更苛刻的连续相同消除惩罚：任何Spin落块时的消除行数将被记录，如果和上一次不同就直接罚20行立刻死亡
+- 从B2B x 4开始，不消行的Spin也会有2的攻击（可抵消可打出）
+- 所有非Spin消除称为“Void”
 - 开局会收系统10行垃圾
 - `垃圾混乱度`增加
 - 启用`垃圾行保护`
