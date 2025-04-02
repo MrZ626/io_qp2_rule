@@ -750,6 +750,9 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 五连 （愚者 The Fool）
 
+> A journey of one thousand six hundred fifty meters starts with a single step.  
+> 一千六百五十米的旅程始于第一步。
+
 2025年愚人节活动限定，一周内免费游玩
 
 - 五连块
