@@ -380,6 +380,9 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 专家 （皇帝 The Emperor）
 
+> A display of power for those willing to bear its burden.  
+> 为那些愿意承受其重负的人而准备的力量的展现。
+
 - 更难获得高度和经验
 - `垃圾混乱度`增加
 - `垃圾难度`降低
@@ -388,19 +391,31 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 无暂存 （节制 Temperance）
 
+> Use each piece as they come and embrace the natural flow of stacking.  
+> 跟随序列的流动，拥抱自然的堆叠。
+
 - 禁用暂存
 
 ### 混乱 （命运之轮 Wheel of Fortune）
+
+> The only constant in life is change.  
+> 生活中永恒不变的就是变化。
 
 - `垃圾混乱度`增加
 - `垃圾难度`降低
 
 ### 重力 （塔 The Tower）
 
+> What will you do when it all comes crumbling down?  
+> 大厦将倾时，你会如何应对？
+
 - 重力显著增加
 - 十层的锁定延迟表（单位 帧）： 30, 29, 28, 27, 26, 24, 22, 20, 18, 16
 
 ### 双倍 （力量 Strength）
+
+> Match great obstacles with greater determination.  
+> 面对巨大的障碍，拿出更大的决心。
 
 - `受击倍率`和`抵消倍率`都变为2倍
 
@@ -409,14 +424,23 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 双洞 （恶魔 The Devil）
 
+> Redefine your limits or succumb to his chains.  
+> 突破你的极限，或是屈服于他的枷锁。
+
 - 每行垃圾行可能会有两个洞
 
 ### 隐形 （隐士 The Hermit）
+
+> When the outside world fails you, trust the voice within to light a path.  
+> 若外界的喧嚣让你失去信心，内心的声音会为你指引方向。
 
 - 放置方块会隐形
 - 每5秒会全场闪烁一次方便挖开
 
 ### 全旋 （魔法师 The Magician）
+
+> Inspiration is nothing short of magic.  
+> 涌现的灵感无异于魔法。
 
 - 非T块的Spin都能像T块一样提供消行数*2的基础伤害了（Spin判定规则见开头）
 - 每当进行消除时（准确说其实是锁定一块时如有冒出文本，不消行Spin也能触发），如果左上角提示文本完全一致，那么立刻出现一行特殊的实心垃圾行作为惩罚，上面随机位置写了一个倒计时数字为`当前层数+5`，当玩家做未被惩罚的消除时-1，归零时变为一行普通的单洞垃圾行，洞位置和数字位置一致
@@ -424,6 +448,9 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 > 唯一一个玩家水平足够后能提供较大正面效果的Mod
 
 ### 双人 （恋人 The Lovers）
+
+> Love, and resign yourself to the fate of another.  
+> 去爱吧，与另一人休戚与共。
 
 - 会员玩家可以邀请其他人和自己两个人一起玩此模式
 - 对于每个人自己来说，大多数对外的数值都会被砍半，例如发送攻击和累计经验等
@@ -519,22 +546,22 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 需要复活时计算复活难度分=`层数+复活累积难度`，然后根据分数从下表选取任务方案，最后从上表里随机选取任务并打乱顺序：
 
 1. F
-1. F F
-1. F F F
-1. F F E
-1. F E E
-1. E E E
-1. E E D
-1. E D D
-1. D D D
-1. D D C
-1. D C C
-1. C C C
-1. C C B
-1. C B B
-1. B B B
-1. B B A
-1. A B A (上限，并且此时固定顺序ABA不打乱)
+2. F F
+3. F F F
+4. F F E
+5. F E E
+6. E E E
+7. E E D
+8. E D D
+9. D D D
+10. D D C
+11. D C C
+12. C C C
+13. C C B
+14. C B B
+15. B B B
+16. B B A
+17. A B A (上限，并且此时固定顺序ABA不打乱)
 
 ## Mod+
 
@@ -555,7 +582,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 专家+ （暴君 The Tyrant）
 
-> Fear, oppression, and limitless ambition.
+> Fear, oppression, and limitless ambition.  
 > 恐惧、压迫和无限的野心。
 
 - 在原有的所有限制基础上，
@@ -595,7 +622,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 无暂存+ （禁欲 Asceticism）
 
-> A detachment from even that which is moderate.
+> A detachment from even that which is moderate.  
 > 对哪怕是中庸之物的疏离。
 
 - 禁用暂存
@@ -607,7 +634,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 混乱+ （铅骰 Loaded Dice）
 
-> In a rigged game, your mind is the only fair advantage.
+> In a rigged game, your mind is the only fair advantage.  
 > 在被操纵的游戏中，你的头脑是唯一合理的优势。
 
 - `垃圾混乱度`增加
@@ -634,14 +661,14 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 重力+ （自由落体 Freefall）
 
-> The ground you stood on never existed in the first place.
+> The ground you stood on never existed in the first place.  
 > 你所站立的地面从始至终都不存在。
 
 - 从一开局起就20G（十层的锁定延迟：24，22，20，18，16，15，14，13，12，11）
 
 ### 双倍+ （顽抗 Last Stand）
 
-> Strength isn't necessary for those with nothing to lose.
+> Strength isn't necessary for those with nothing to lose.  
 > 对那些一无所有的人而言，力量并非必需。
 
 - 受击倍率变为3倍（注意：`抵消倍率`不变）
@@ -651,7 +678,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 双洞+ （天谴 Damnation）
 
-> Neither the freedom of life or peace of death.
+> Neither the freedom of life or peace of death.  
 > 生无自由，死无宁静。
 
 - 初始场地变成12行棋盘垃圾行
@@ -663,7 +690,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 隐形+ （放逐 The Exile）
 
-> Never underestimate blind faith.
+> Never underestimate blind faith.  
 > 永远不要低估盲目的信仰。
 
 - 放置方块会隐形（但场地不再闪烁）
@@ -672,7 +699,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 全旋+ （邪术师 The Warlock）
 
-> Into realms beyond heaven and earth.
+> Into realms beyond heaven and earth.  
 > 踏入超脱天地之境界。
 
 - 所有非Spin消除称为“Void”，无攻击
@@ -686,7 +713,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 双人+ （流血之心 Bleeding Hearts）
 
-> Even as we bleed, we keep holding on...
+> Even as we bleed, we keep holding on...  
 > 即便已伤痕累累，我们仍紧紧相拥…
 
 2025年情人节活动限定，一周内所有人免费游玩（也包括正位），无需解锁
@@ -731,7 +758,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 ### 五连+ （愚蠢的徒劳 A Fool's Errand）
 
-> You'll never escape who you are.
+> You'll never escape who you are.  
 > 你永远无法摆脱你的本性。
 
 2025年愚人节活动限定，一周内免费游玩（需要爬2500m解锁）
