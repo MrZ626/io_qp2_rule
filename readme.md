@@ -779,10 +779,10 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 | Wheel of Fortune | 命运之轮 | 垃圾更乱 | Loaded Dice | 铅骰 | 1s消行延迟+图案开局 |
 | The Tower | 塔 | 高重力+后期降锁延 | Freefall | 自由落体 | 20G低锁延 |
 | Strength | 力量 | 双倍垃圾+双倍抵消 | Last Stand | 顽抗 | 三倍垃圾+正常抵消+矮场地 |
-| The Devil | 恶魔 | 双洞垃圾 | Damnation | 天谴 | 废墟垃圾行+棋盘开局 |
+| The Devil | 恶魔 | 双洞垃圾 | Damnation | 天谴 | 废墟垃圾行+挖掘才能攻击+棋盘开局 |
 | The Hermit | 隐士 | 隐形+5秒闪烁 | The Exile | 放逐 | 不再闪烁+垃圾看不全 |
 | The Magician | 魔法师 | 不mini+惩罚重复 | The Warlock | 邪术师 | 即死惩罚+非旋算消一+散垃圾开局 |
-| The Lovers | 恋人 | 双人 | | | |
+| The Lovers | 恋人 | 双人 | Bleeding Hearts | 流血之心 | （活动）优先打给队友的Backfire |
 
 ## 一些备注
 
