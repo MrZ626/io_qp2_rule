@@ -693,7 +693,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 - 场地内固定有4行垃圾，挖了瞬间出
 - 启用`垃圾行保护`（呃…不是固定有4行吗）
 
-### 隐形+ （放逐 The Exile）
+### 隐形+ （流亡者 The Exile）
 
 > Never underestimate blind faith.  
 > 永远不要低估盲目的信仰。
@@ -796,8 +796,8 @@ _9 _7 _1 _0 16 24 __
 | The Tower | 塔 | 高重力+后期降锁延 | Freefall | 自由落体 | 20G低锁延 |
 | Strength | 力量 | 双倍垃圾+双倍抵消 | Last Stand | 顽抗 | 三倍垃圾+正常抵消+矮场地 |
 | The Devil | 恶魔 | 双洞垃圾 | Damnation | 天谴 | 废墟垃圾行+挖掘才能攻击+棋盘开局 |
-| The Hermit | 隐士 | 隐形+5秒闪烁 | The Exile | 放逐 | 不再闪烁+垃圾看不全 |
-| The Magician | 魔法师 | 不mini+惩罚重复 | The Warlock | 邪术师 | 即死惩罚+非旋算消一+散垃圾开局 |
+| The Hermit | 隐士 | 隐形+5秒闪烁 | The Exile | 流亡者 | 不再闪烁+垃圾看不全 |
+| The Magician | 魔法师 | 不mini+惩罚重复 | The Warlock | 邪术师 | 即死惩罚+非旋无攻击+散垃圾开局 |
 | The Lovers | 恋人 | 双人 | Bleeding Hearts | 流血之心 | （活动）优先打给队友的Backfire |
 
 ## 一些备注
