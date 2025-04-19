@@ -14,7 +14,7 @@
 逆位Mod [mod名]_reverse
 间断洞位改变概率 messiness_change
 连续洞位改变概率 messiness_inner
-垃圾难度 garbagefavor
+垃圾易挖度 garbagefavor
 垃圾集中 messiness_center
 垃圾行等待时间 garbagephase
 */
@@ -132,7 +132,7 @@ Loop() {
         this.self.gom.GameOver("garbagesmash");
 
     // 受击权重在3/5/7分钟增加
-    if (frame===10800 || frame===18000 || frame===25200)
+    if (frame === 10800 || frame === 18000 || frame === 25200)
         this.S.stats.zenith.targetingfactor++;
 
     // 释放受击保护
@@ -154,7 +154,7 @@ Loop() {
         this.S.setoptions.messiness_inner = 1;
     }
 
-    // 垃圾难度
+    // 垃圾易挖度
     this.S.setoptions.garbagefavor = MOD_volatileRev ? 50 : (MOD_expert ? 0 : 33) - 3 * floor - (MOD_messy ? 25 : 0);
 
     // 垃圾行等待时间
@@ -175,13 +175,13 @@ Loop() {
 }
 
 // 一些方法
-function getHolePosition() { // 计算垃圾行洞位置相关，主要是处理垃圾难度 （使用copilot整理过代码，不保证完全正确）
+function getHolePosition() { // 计算垃圾行洞位置相关，主要是处理垃圾易挖度 （使用copilot整理过代码，不保证完全正确）
     let pos = 0;
 
     if (MOD_volatileRev) t.zenith.garbageahead.shift();
 
     if (t.setoptions.garbagefavor !== 0) {
-        pos = function() {
+        pos = function () {
             const scores = [];
 
             // 如果最高的一行有洞并且包含了灰色格子（垃圾行），记录左数第一个洞的位置为holePosAtTopLine
@@ -219,7 +219,7 @@ function getHolePosition() { // 计算垃圾行洞位置相关，主要是处理
             // 按照每列的难挖度从大到小排序
             scores.sort((e, t) => t[1] - e[1]);
 
-            // 根据幸运度计算每列的权重，也就是决定要倾向于挑选难挖度高还是低的列
+            // 根据垃圾易挖度计算每列的权重，也就是决定要倾向于挑选难挖度高还是低的列
             // favor为0时每一列的权重都是10，也就是等概率，图像画出来是一条直线（虽然0的时候其实会跳过这些步骤，不用这么麻烦），正数的时候就会把这条直线绕中点(4.5，10)顺时针旋转，也就是增加前五项好挖的列的权重，减少后五项不好挖的列的权重（负权重计为0）
             let scoreSum = 0;
             for (let i = 0; i < scores.length; i++) {
