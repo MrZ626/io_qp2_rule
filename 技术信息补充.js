@@ -14,7 +14,7 @@
 逆位Mod [mod名]_reverse
 间断洞位改变概率 messiness_change
 连续洞位改变概率 messiness_inner
-垃圾易挖度 garbagefavor
+垃圾挖掘难度 garbagefavor
 垃圾集中 messiness_center
 垃圾行等待时间 garbagephase
 */
@@ -30,20 +30,20 @@ TargetingGraceRevEx = [0, 1, .9, .8, .7, .6, .5, .4, .3, .2, .1];
 RevNoHoldHoleSideChangeChance = [.1, .1, .15, .2, .25, .3, .35, .4, .45, .5, .55];
 ReviveLevelIncrease = [1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 3];
 CancelingFatigueBumpCap = [4, 4, 5, 6, 7, 8, 9, 10, 1 / 0, 1 / 0, 1 / 0];
-GetSpeedCap(frame) {
+function GetSpeedCap(frame) {
     const t = this.FloorDistance.find((t => frame < t)) - frame;
     return Math.max(0, Math.min(1, t / 5 - .2))
 }
 
 // 主循环
-Loop() {
+function Loop() {
     const frame = this.self.esm.frame;
     let rank = Math.floor(this.S.stats.zenith.rank);
     const height0 = this.S.stats.zenith.altitude; // 记下用于卡层的高度
 
     // 经验流失
     if (frame >= this.S.zenith.rank_locked_until) {
-        let leakSpeed = ...; // 单人:普通3专家5  双人:3+专家人数
+        let leakSpeed = _; // 单人:普通3专家5  双人:3+专家人数
         this.S.zenith.climb_pts -= leakSpeed * (rank ** 2 + rank) / 3600 // climb_pts是当前经验
     }
 
@@ -154,7 +154,7 @@ Loop() {
         this.S.setoptions.messiness_inner = 1;
     }
 
-    // 垃圾易挖度
+    // 垃圾挖掘难度
     this.S.setoptions.garbagefavor = MOD_volatileRev ? 50 : (MOD_expert ? 0 : 33) - 3 * floor - (MOD_messy ? 25 : 0);
 
     // 垃圾行等待时间
@@ -175,7 +175,7 @@ Loop() {
 }
 
 // 一些方法
-function getHolePosition() { // 计算垃圾行洞位置相关，主要是处理垃圾易挖度 （使用copilot整理过代码，不保证完全正确）
+function getHolePosition() { // 计算垃圾行洞位置相关，主要是处理垃圾挖掘难度 （使用copilot整理过代码，不保证完全正确）
     let pos = 0;
 
     if (MOD_volatileRev) t.zenith.garbageahead.shift();
@@ -204,7 +204,7 @@ function getHolePosition() { // 计算垃圾行洞位置相关，主要是处理
                 }
             }
 
-            // 对于每一列，先找到该列最低的空格，记录此列的“难挖度”
+            // 对于每一列，先找到该列最低的空格，记录此列的“挖掘难度”
             e: for (let x = 0; x < field.width; x++) {
                 for (let y = 0; y < field.height; y++) {
                     if (null !== t.board[y][x]) {
@@ -216,10 +216,10 @@ function getHolePosition() { // 计算垃圾行洞位置相关，主要是处理
                 scores.push([x, .1 * t.rngex.nextFloat()]);
             }
 
-            // 按照每列的难挖度从大到小排序
-            scores.sort((e, t) => t[1] - e[1]);
+            // 按照每列的挖掘难度从小到大排序（前面好挖 后面难挖）
+            scores.sort((e, t) => e[1] - t[1]);
 
-            // 根据垃圾易挖度计算每列的权重，也就是决定要倾向于挑选难挖度高还是低的列
+            // 根据垃圾挖掘难度计算每列的权重，也就是挑选挖掘难度的倾向
             // favor为0时每一列的权重都是10，也就是等概率，图像画出来是一条直线（虽然0的时候其实会跳过这些步骤，不用这么麻烦），正数的时候就会把这条直线绕中点(4.5，10)顺时针旋转，也就是增加前五项好挖的列的权重，减少后五项不好挖的列的权重（负权重计为0）
             let scoreSum = 0;
             for (let i = 0; i < scores.length; i++) {
@@ -263,10 +263,10 @@ function getHolePosition() { // 计算垃圾行洞位置相关，主要是处理
 }
 
 // 一些事件
-AwardKill() { // 击杀
+function AwardKill() { // 击杀
     this.GiveBonus(.25 * Math.floor(this.S.stats.zenith.rank) * (MOD_expertRev ? 8 : 15))
 }
-AwardLines(amount, giveHeight = true, giveXP = true) { // 非专家消行(false,true) / 抵消(false,true) / 发送(true,true)
+function AwardLines(amount, giveHeight = true, giveXP = true) { // 非专家消行(false,true) / 抵消(false,true) / 发送(true,true)
     // 加高度（受mod等影响，见推进器章节表格）
     let dh = .25 * Math.floor(this.S.stats.zenith.rank) * amount * (giveHeight ? 1 : 0);
 
@@ -279,11 +279,11 @@ AwardLines(amount, giveHeight = true, giveXP = true) { // 非专家消行(false,
     // 消行获取经验
     this.GiveClimbPts((amount + .05) * (giveXP ? 1 : 0));
 }
-AwardHasBeenAttacked(amount) { // 被攻击
+function AwardHasBeenAttacked(amount) { // 被攻击
     const spaceRemain = Math.min(18 - this.S.stats.zenith.targetinggrace, amount);
     if (spaceRemain > 0) this.S.stats.zenith.targetinggrace += spaceRemain;
 }
-GiveBonus(amount) { // 获取高度（各种途径）
+function GiveBonus(amount) { // 获取高度（各种途径）
     if (this.S.setoptions.zenith_tutorial && this.S.zenith.tutorial.stage > 0 && this.S.zenith.tutorial.stage < 5)
         amount *= me.GetSpeedCap(this.S.stats.zenith.altitude);
     this.S.zenith.bonusremaining += amount;
