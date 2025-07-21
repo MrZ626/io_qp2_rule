@@ -154,8 +154,15 @@ function Loop() {
         this.S.setoptions.messiness_inner = 1;
     }
 
+    // 刷新垃圾集中的开关
+    this.S.setoptions.messiness_center = this.S.setoptions.messiness_inner <= .15 && a <= 5;
+    if (MOD_volatileRev) {
+        this.S.setoptions.garbagefavor = 50
+        this.S.setoptions.messiness_center = true
+    }
+
     // 垃圾挖掘难度
-    this.S.setoptions.garbagefavor = MOD_volatileRev ? 50 : (MOD_expert ? 0 : 33) - 3 * floor - (MOD_messy ? 25 : 0);
+    this.S.setoptions.garbagefavor = (MOD_expert ? 0 : 33) - 3 * floor - (MOD_messy ? 25 : 0);
 
     // 垃圾行等待时间
     this.S.setoptions.garbagephase = MOD_expert ? 66 - 6 * floor : 165 - 15 * floor;
