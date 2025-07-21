@@ -155,7 +155,7 @@ function Loop() {
     }
 
     // 刷新垃圾集中的开关
-    this.S.setoptions.messiness_center = this.S.setoptions.messiness_inner <= .15 && a <= 5;
+    this.S.setoptions.messiness_center = this.S.setoptions.messiness_inner <= .15 && floor <= 5;
     if (MOD_volatileRev) {
         this.S.setoptions.garbagefavor = 50
         this.S.setoptions.messiness_center = true
@@ -167,7 +167,7 @@ function Loop() {
     // 垃圾行等待时间
     this.S.setoptions.garbagephase = MOD_expert ? 66 - 6 * floor : 165 - 15 * floor;
     if (MOD_anyRev && !MOD_expert)
-        this.S.setoptions.garbagephase = (MOD_messyRev || MOD_volatileRev || MOD_doubleholeRev) ? 75 : [75, 75, 75, 75, 75, 75, 75, 60, 45, 30, 15][floor];
+        this.S.setoptions.garbagephase = (MOD_messyRzev || MOD_volatileRev || MOD_doubleholeRev) ? 75 : [75, 75, 75, 75, 75, 75, 75, 60, 45, 30, 15][floor];
 
     // 垃圾行保护，根据垃圾行数量开关改变受击权重
     if (frame % 15 == 0 && (MOD_messyRev || MOD_doubleholeRev || MOD_allspinRev)) {
