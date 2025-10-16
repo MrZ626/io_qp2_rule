@@ -73,7 +73,7 @@ function Loop() {
     if (this.S.zenith.last_rank_change_was_promote && this.S.zenith.climb_pts >= 2 * (rank - 1))
         this.S.zenith.promotion_fatigue = 0;
 
-    // 跳级！如果升级后还有大量剩余的话
+    // 计算小数等级……或者跳级!！如果一帧内获得大量经验升级后还有足够已将下一级填满的话就会瞬间跳级
     this.S.stats.zenith.rank = rank + this.S.zenith.climb_pts / (4 * rank);
 
     // 一些统计
