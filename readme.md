@@ -539,7 +539,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 | E | iflat              | 2   | 2 x 横放I消一 | Clear 2 Lines using\nhorizontal I-Pieces | 3 | |
 | E | pieces             | 20  | 放20块 | Place 20 pieces | 2 | |
 | E | attack             | 6   | 送出6行攻击 | Send 6 Attack | 1 | |
-| E | placeoconsecutive  | 2   | 连放两块O | Place 2 O-Pieces\nin a row | 3 | |
+| E | placeoconsecutive  | 2   | 连放两块O | Place 2 O-Pieces\nin a row | 3 | 【NH】 |
 | E | norotateclockwise  | 12  | 只用逆时针转 连放12块（其他旋转时重来） | Place 12 pieces while only\nrotating counterclockwise | 4 | |
 | E | singlenocombo      | 6   | 6 x 消一 不连击（二连消时重来） | Clear 6 Singles without\nstarting a combo | 3 | |
 | D | double             | 4   | 4 x 消二 | Clear 4 Doubles | 2 | |
@@ -565,7 +565,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 | C | top3rows           | 3   | 最高堆到至少第18行 保持3秒 | Have part of your stack in\nthe top 3 rows for 3 seconds | 4 | |
 | C | linesnoti          | 10  | 消10行 不用T和I（用T/I消除时重来） | Clear 10 Lines without\nclearing with T or I-pieces | 4 | |
 | C | szspintriple       | 1   | S/Z旋消三 | Clear an S/Z-Spin Triple | 2 | |
-| C | odoubleconsecutive | 2   | 2连O块消二 | Clear 2 Doubles consecutively\nusing two O-Pieces | 4 | |
+| C | odoubleconsecutive | 2   | 2连O块消二 | Clear 2 Doubles consecutively\nusing two O-Pieces | 4 | 【NH】 |
 | C | tspinminiclear     | 4   | 4 x T旋mini消 | Clear 4 T-Spin Minis | 2 | |
 | C | attack             | 14  | 送出14行攻击 | Send 14 Attack | 1 | |
 | C | doublespiece       | 3   | 3 x 消二 只用一种块（其他块消二时重来） | Clear 3 Doubles\nwith the same type of piece | 4 | |
