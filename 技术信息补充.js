@@ -269,6 +269,45 @@ function getHolePosition() { // 计算垃圾行洞位置相关，主要是处理
     }
 }
 
+// 多段攻击相关（整理过代码）
+function ExplodeAttack(atkObj) {
+    t.garbageid--;
+
+    let total = 16 + Math.max(Math.floor((t.stats.zenith.altitude - 3500) / 500), 0)
+    if (MOD_volatile) total *= 2
+
+    const secBase = Math.floor(total / 4)
+    const remain = total - 4 * secBase
+    const sections = [secBase, secBase, secBase, secBase]
+    for (let i = 0; i < remain; i++) sections[3 - i]++;
+    // 上面四行效果是把total尽量平均分成四份放入sections中，大的数字排在后，例如18变为[4,4,5,5]
+    // 此处提供一个更简洁的写法：
+    // const sections = []
+    // for (let i = 0; i < 4; i++)
+    //     sections[i] = Math.floor(total / 4) + (total % 4 >= 4 - i);
+
+    let atk = atkObj.amt;
+    const atkQueue = [];
+    let id = 0;
+    for (; atk > 0 && atkQueue.length < sections.length;) {
+        const cut = Math.min(sections[id++], atk);
+        atk -= cut
+        atkQueue.push({
+            ...atkObj,
+            amt: cut,
+            id: ++t.garbageid
+        })
+    }
+    const countdown = 120 + 30 * atkQueue.length;
+    t.windupwaituntil > e.esm.frame ? (e.wfm.WaitFrames(t.windupwaituntil - e.esm.frame, "start-explode-attack", atkQueue), t.windupwaituntil += countdown) : (StartExplodeAttack(atkQueue), t.windupwaituntil = e.esm.frame + countdown)
+}
+function StartExplodeAttack(t) {
+    for (let n = 0; n < t.length; n++) e.wfm.WaitFrames(60 + 30 * n, "process-exploded-attack", t[n]);
+    e.c.OnClient((() => {
+        e.sfx.Play(`garbagewindup_${Math.max(1,Math.min(4,t.length))}`), e.hm.H.board.el("garbagewindupicon").create(Math.max(1, Math.min(4, t.length)))
+    }))
+}
+
 // 一些事件
 function AwardKill() { // 击杀
     this.GiveBonus(.25 * Math.floor(this.S.stats.zenith.rank) * (MOD_expertRev ? 8 : 15))
