@@ -628,6 +628,33 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 16. B B A
 17. A B A (上限，并且此时固定顺序ABA不打乱)
 
+## Mod组合
+
+- 【NH】【GV】 A Modern Classic 流行的经典
+    - “经典块”普遍没有Hold，且主要考察高重力
+- 【NH】【AS】 The Starving Artist 饥饿艺术家
+    - 无Hold会让搭建Allspin需要更多的预判，否则经常搭出来了没有对应的块
+- 【GV】【IN】 The Grandmaster 特级大师
+    - 出处为TGM系列(Tetris The Grand Master)，考察高重力+隐形
+- 【EX】【MS】 Block Rationing 方块紧缺
+    - `特殊目标：前400块总攻击数`，使用EX和MS大幅增加混乱度，让最优解不是纯靠挖掘垃圾行
+- 【EX】【2P】 Trained Professionals 专业团队
+    - 实际难度会因【2P】攻击减半和【EX】加速经验流失的组合而高很多
+- 【NH】【MS】【DH】 Deadlock 僵局
+    - 无Hold会使得挖掘难度增加
+- 【MS】【DH】【AS】 The Escape Artist 逃脱大师
+    - `特殊目标：使用spin消除的垃圾行数`，带AS挖掘垃圾行有一定难度
+- 【EX】【VL】【AS】 The Con Artist 诈骗艺术家
+    - 需要灵活搭建Allspin结构和更好地把控抵消/吃进垃圾行时机
+- 【EX】【NH】【DH】 Emperor's Decadence 帝王的陨落
+    - 类似Deadlock，包含EX难度更高
+- 【EX】【MS】【VL】【DH】 Divine Mastery 神之力
+    - 鼓励卡好时机尽量全抵消的EX组合
+- Swamp Water Lite 沼泽-轻量版
+    - 全部Mod去掉任一个
+- Swamp Water 沼泽
+    - 全部Mod
+
 ## Mod+
 
 每个Mod都有对应的强化版本，需要带着对应的Mod累计爬3万米解锁（开了多个可以同时累计）
