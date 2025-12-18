@@ -650,10 +650,10 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
     - 类似Deadlock，包含EX难度更高
 - 【EX】【MS】【VL】【DH】 Divine Mastery 神之力
     - 鼓励卡好时机尽量全抵消的EX组合
-- Swamp Water Lite 沼泽-轻量版
-    - 全部Mod去掉任一个
-- Swamp Water 沼泽
-    - 全部Mod
+- 【全部Mod去掉任一个】 Swamp Water Lite 沼泽-轻量版
+- 【全部Mod】 Swamp Water 沼泽
+- 【PN】【全部Mod】 WTF 什么鬼
+- 【SB】【AS】 Perfecting The Snowman 精雕雪人
 
 ## Mod+
 
