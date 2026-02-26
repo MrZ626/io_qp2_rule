@@ -6,23 +6,21 @@
 
 该大房间不存在公共的“一局”的概念，所有的人随开随打，不需要等待
 
-## 爬塔
-
 此模式的背景题材为攀登 `天穹之塔 (Zenith Tower)`，最终分数称为`高度`（Altitude）  
 每达到一定的高度时会进入下层
 
-| 层数 | 高度范围      | 名称       |         原文         |
-| ---- | ------------- | ---------- | :------------------: |
-| 一层 | 0m - 50m      | 初始大厅   |  Hall of Beginnings  |
-| 二层 | 50m - 150m    | 酒店       |      The Hotel       |
-| 三层 | 150m - 300m   | 赌场       |      The Casino      |
-| 四层 | 300m - 450m   | 竞技场     |      The Arena       |
-| 五层 | 450m - 650m   | 博物馆     |      The Museum      |
-| 六层 | 650m - 850m   | 废弃办公楼 |  Abandoned Offices   |
-| 七层 | 850m - 1100m  | 实验室     |    The Laboratory    |
-| 八层 | 1100m - 1350m | 核心       |       The Core       |
-| 九层 | 1350m - 1650m | 污染区     |      Corruption      |
-| 十层 | 1650m+        | 神之境     | Platform of The Gods |
+| 层数 | 高度  | 名称                           |
+| ---- | ----- | ------------------------------ |
+| 一层 | 0m    | 初始大厅 (Hall of Beginnings)  |
+| 二层 | 50m   | 酒店 (The Hotel)               |
+| 三层 | 150m  | 赌场 (The Casino)              |
+| 四层 | 300m  | 竞技场 (The Arena)             |
+| 五层 | 450m  | 博物馆 (The Museum)            |
+| 六层 | 650m  | 废弃办公楼 (Abandoned Offices) |
+| 七层 | 850m  | 实验室 (The Laboratory)        |
+| 八层 | 1100m | 核心 (The Core)                |
+| 九层 | 1350m | 污染区 (Corruption)            |
+| 十层 | 1650m | 神之境 (Platform of The Gods)  |
 
 ## 重力
 
