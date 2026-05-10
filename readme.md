@@ -650,16 +650,15 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 - 【PN】【全部Mod】 WTF 什么鬼
 - 【SB】【AS】 Perfecting The Snowman 精雕雪人
 
-## Mod+
+## rMod
 
-每个Mod都有对应的强化版本，需要带着对应的Mod累计爬3万米解锁（开了多个可以同时累计）
-【r2P】特殊，见对应小节
+每个Mod都有相同主题的超难版本，需要带每个Mod累计爬3万米分别解锁（开了多个可以同时累计）（【r2P】不用）
 
-所有的Mod+都只能单独开启游玩，不能再叠加其他Mod
+所有的rMod都只能单独开启游玩，不能再叠加其他Mod
 
 ### 快速解锁方案
 
-如果你想尽快解锁所有Mod+的话建议同时开几个，以下给出一个具体的方案供参考（假设你的水平是能畅玩所有的单Mod且能拿到几个f10，不然也说不上什么快速解锁）：
+如果你想尽快解锁所有rMod的话建议同时开几个，以下给出一个具体的方案供参考（假设你的水平是能畅玩所有的单Mod且能拿到几个f10，不然也说不上什么快速解锁）：
 
 第一轮：`【MS】【GV】【DH】【AS】`四个一起开然后靠allpin猛猛输出，尽量不要让垃圾行进来，刷满3万米。如果不怕`【IN】`就也可以带上，否则之后要单独打
 
@@ -672,7 +671,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 1. `垃圾行保护`（仅在部分Mod中使用）：
 场地内的每一行`非永久垃圾行`（包含可消除的***灰色***格子的行）会使`受击权重`减少0.5，至多减2.5（由于初始权重为3，所以这几个模式开局很少被打），每0.25秒刷新一次
 
-### rEX 专家+ （暴君 The Tyrant）
+### rEX 逆位专家 （暴君 The Tyrant）
 
 > Fear, oppression, and limitless ambition.  
 > 恐惧、压迫和无限的野心。
@@ -712,7 +711,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 | 11:00 | 垃圾行彻底混乱(获得`全散`效果)   | 革命拉开了帷幕…     | THE REVOLUTION HAS BEGUN… garbage received becomes much messier |
 | 12:00 | +12行实心垃圾(共20)              | 时代的终结。        | THE END OF AN ERA. +12 PERMANENT LINES                          |
 
-### rNH 无暂存+ （禁欲 Asceticism）
+### rNH 逆位无暂存 （禁欲 Asceticism）
 
 > A detachment from even that which is moderate.  
 > 对哪怕是中庸之物的疏离。
@@ -724,7 +723,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 - Spin全都计为Mini（基础攻击为`消行数-1`）
 - 垃圾行都变成2宽的样式
 
-### rMS 混乱+ （铅骰 Loaded Dice）
+### rMS 逆位混乱 （铅骰 Loaded Dice）
 
 > In a rigged game, your mind is the only fair advantage.  
 > 在被操纵的游戏中，你的头脑是唯一合理的优势。
@@ -751,14 +750,14 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 ..........
 ```
 
-### rGV 重力+ （自由落体 Freefall）
+### rGV 逆位重力 （自由落体 Freefall）
 
 > The ground you stood on never existed in the first place.  
 > 你所站立的地面从始至终都不存在。
 
 - 从一开局起就20G，每层的锁定延迟为：24, 22, 20, 18, 16, 15, 14, 13, 12, 11 （帧）
 
-### rVL 双倍+ （顽抗 Last Stand）
+### rVL 逆位双倍 （顽抗 Last Stand）
 
 > Strength isn't necessary for those with nothing to lose.  
 > 对那些一无所有的人而言，力量并非必需。
@@ -768,7 +767,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 - 垃圾行孔洞位置有两个预告
 - `垃圾易挖度`锁定在一个很高的值，且永远开启`垃圾集中`
 
-### rDH 双洞+ （天谴 Damnation）
+### rDH 逆位双洞 （天谴 Damnation）
 
 > Neither the freedom of life or peace of death.  
 > 生无自由，死无宁静。
@@ -781,7 +780,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 - 场地内固定有4行垃圾，挖了瞬间出
 - 启用`垃圾行保护`（呃…不是固定有4行吗）
 
-### rIN 隐形+ （流亡者 The Exile）
+### rIN 逆位隐形 （流亡者 The Exile）
 
 > Never underestimate blind faith.  
 > 永远不要低估盲目的信仰。
@@ -790,7 +789,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 - 垃圾行只能看到最浅层的三行
 - 开局会收系统3行垃圾
 
-### rAS 全旋+ （邪术师 The Warlock）
+### rAS 逆位全旋 （邪术师 The Warlock）
 
 > Into realms beyond heaven and earth.  
 > 踏入超脱天地之境界。
@@ -815,7 +814,7 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 - 开局4x4场地
 - 每消除20行时场地宽度和高度各+1，直到20x20后不再增加
 
-### rSB 雪球+ （永冻场地 PERMAFROST BOARD）
+### rSB 逆位雪球 （永冻场地 PERMAFROST BOARD）
 
 > Immortality achieved through a refusal to melt.  
 > 拒绝消融，铸就不朽。
@@ -824,12 +823,14 @@ Mod总共有9个，每个都对应一个特殊效果可以独立开关，在背�
 
 - 【SB】的基础上把DAS和ARR都强制设为0.3f（当成0就行）
 
-### r2P 双人+ （流血之心 Bleeding Hearts）
+### r2P 逆位双人 （流血之心 Bleeding Hearts）
 
 > Even as we bleed, we keep holding on...  
 > 即便已伤痕累累，我们仍紧紧相拥…
 
 2025/2026年情人节活动限定，一周内所有人免费游玩（也包括正位），无需解锁
+
+2026年情人节活动中所有玩家Duo累计高度达标，转为常驻
 
 - 攻击时（送出/抵消都算）有Backfire，优先给队友，如果已经死了就打给自己（参数是zen模式中的unclear 0.5x，无预警无等待瞬间打入场地）
 - 任一人死了的时候高度会被暂时锁定，直到其复活
@@ -885,7 +886,7 @@ _9 _7 _1 _0 16 24 __
 15 14 12 _6 23 32 38
 ```
 
-### rPN 五连+ （愚蠢的徒劳 A Fool's Errand）
+### rPN 逆位五连 （愚蠢的徒劳 A Fool's Errand）
 
 > You'll never escape who you are.  
 > 你永远无法摆脱你的本性。
